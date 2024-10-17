@@ -879,7 +879,6 @@ local chr = plr.Character;
 local hum = chr.Humanoid;
 local mov = {};
 local mov2 = {};
-
 --[[Network]]
 coroutine.resume(coroutine.create(function()
 	settings().Physics.AllowSleep = false;
@@ -895,15 +894,13 @@ coroutine.resume(coroutine.create(function()
 		end
 	end)
 end))
-
 function ftp(str)
 local pt = {};
 if str ~= 'me' and str ~= 'random' then
 for i, v in pairs(game.Players:GetPlayers()) do
 if v.Name:lower():find(str:lower()) then
 table.insert(pt, v);
-end
-end
+end        end
 elseif str == 'me' then
 table.insert(pt, plr);
 	elseif str == 'random' then
@@ -911,7 +908,6 @@ table.insert(pt, plr);
 end
 return pt;
 end
-
 for _, v in pairs(hum:GetAccessories()) do
 	local b = v.Handle;
 	b.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0);
@@ -920,8 +916,7 @@ for _, v in pairs(hum:GetAccessories()) do
 	for _, k in pairs(v:GetChildren()) do
 		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
 			k:Destroy();
-		end
-	end
+		end	end
 	local still = Instance.new('BodyAngularVelocity', b);
 	still.MaxTorque = Vector3.new(math.huge, math.huge, math.huge);
 	still.AngularVelocity = Vector3.new(0, 0, 0);
@@ -938,7 +933,6 @@ for _, v in pairs(hum:GetAccessories()) do
 	table.insert(mov, a1);
 	table.insert(mov2, still);
 end
-
 local par = {};
 for _, v in pairs(mov) do
 	local parr = Instance.new('Part', workspace);
@@ -948,7 +942,6 @@ for _, v in pairs(mov) do
 	parr.CanCollide = false;
 	table.insert(par, parr);
 end
-
 local rotx = 0;
 local rotz = math.pi / 2;
 local height = 0;
@@ -1027,8 +1020,7 @@ game['Run Service'].RenderStepped:Connect(function()
 				offset = so.PlaybackLoudness / 35;
 				speed = so.PlaybackLoudness / 500;
 				angular = Vector3.new(0, so.PlaybackLoudness / 75, 0);
-			end
-		end)
+			end		end)
 		for i, v in pairs(mov) do
 			v.Position = Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Z);
 		end
@@ -1040,19 +1032,16 @@ game['Run Service'].RenderStepped:Connect(function()
 	elseif mode == 11 then
 		for i, v in pairs(mov) do
 			v.Position = Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(plr:GetMouse().Hit.p)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(plr:GetMouse().Hit.p)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(plr:GetMouse().Hit.p)).Z) + Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Z);
-		end
-	end
+		end	end
 	for _, v in pairs(mov2) do
 		v.AngularVelocity = angular;
-	end
-end)
+	end     end)
 game.Players.LocalPlayer.Chatted:Connect(function(c)
 	if c:split(' ')[1] == '.orbit' then
 		for _, v in pairs(mov) do
 			chr = ftp(c:split(' ')[2])[1].Character;
 			v.Parent = ftp(c:split(' ')[2])[1].Character.HumanoidRootPart;
-		end
-	end
+		end	end
 	if c:split(' ')[1] == '.speed' then
 		speed = tonumber(c:split(' ')[2]);
 	end
@@ -1064,9 +1053,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(c)
 	end
 	if c:split(' ')[1] == '.angular' then
 		angular = Vector3.new(tonumber(c:split(' ')[2]), tonumber(c:split(' ')[3]), tonumber(c:split(' ')[4]));
-	end
-end)
-
+	end    end)
 for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
 if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
 game:GetService("RunService").Heartbeat:connect(function()
