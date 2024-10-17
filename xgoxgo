@@ -1076,7 +1076,7 @@ Title = "xgo 一键脱衣2.0";
 Text = "警视觉效果";
 Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150")
 Duration = 16;      end)
-Tab:AddButton({	Name = "鼠标（手机不建议用）",	"通用", function()loadstring(game:HttpGet(('https://pastefy.ga/V75mqzaz/raw'),true))()	end)
+MainSection:NewButton("鼠标（手机不建议用）",	"通用", function()loadstring(game:HttpGet(('https://pastefy.ga/V75mqzaz/raw'),true))()	end)
 MainSection:NewButton("小go 在外网找的几个道具","通用",function()  loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/b04e28198c8eeb1408921a1560792152/raw/67739a2bc571093976e6cd7e51fb526dedd75861/tools",true))()  end)
 MainSection:NewButton("聊天绘画图","通用",function() loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/pamn/refs/heads/main/xz"))()  end)
 MainSection:NewButton("死亡笔记","通用",function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0"))()  end)
