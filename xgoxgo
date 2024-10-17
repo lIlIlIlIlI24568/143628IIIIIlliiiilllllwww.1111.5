@@ -561,5 +561,530 @@ MainSection:NewButton("约翰的笑声(130759239)", "音乐",function()local sou
 MainSection:NewButton("他是免费的(130771265)", "音乐",function()local sound = Instance.new("Sound")sound.SoundId = "rbxassetid://130771265"sound.Parent = game.Workspace     sound:Play()end)
 MainSection:NewButton("李·罗伊·詹金斯(130758889)", "音乐",function()local sound = Instance.new("Sound")sound.SoundId = "rbxassetid://130758889"sound.Parent = game.Workspace     sound:Play()end)
 MainSection:NewButton("防空警报（792323017）", "音乐",function()local sound = Instance.new("Sound")sound.SoundId = "rbxassetid://792323017"sound.Parent = game.Workspace     sound:Play()end) 
-local Main = Window:NewTab("音乐",18923878915)
-local MainSection = Main:NewSection("xgo音乐菜单 随缘更新")
+local Main = Window:NewTab("图像画质",18923878915)
+local MainSection = Main:NewSection("xgo图像画质菜单")
+MainSection:NewButton( "美丽天空",  "画质"， function() local light = game.Lighting
+for i, v in pairs(light:GetChildren()) do  v:Destroy()end
+local ter = workspace.Terrain
+local color = Instance.new("ColorCorrectionEffect")
+local bloom = Instance.new("BloomEffect")
+local sun = Instance.new("SunRaysEffect")
+local blur = Inst  end)
+MainSection:NewButton( "光影（浅）",	"画质"， function()  	loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()  	end)
+MainSection:NewButton("光影菜单  小go推荐","画质"， function()loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Shader-RTX-New-12425"))()end)
+MainSection:NewButton("光影v2","画质"， function()loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()end)
+MainSection:NewButton("光影v4","画质"， function()loadstring(game:HttpGet('https://pastebin.com/raw/gUceVJig'))()end)
+MainSection:NewButton("RTX  图形画质","画质"， function() local light = game.Lighting
+for i, v in pairs(light:GetChildren()) do
+ v:Destroy()  end
+local ter = workspace.Terrain
+local color = Instance.new("ColorCorrectionEffect")
+local bloom = Instance.new("BloomEffect")
+local sun = Instance.new("SunRaysEffect")
+local blur = Instance.new("BlurEffect")
+color.Parent = light
+bloom.Parent = light
+sun.Parent = light
+blur.Parent = light
+  --enable or disable shit
+local config = {
+ Terrain = true,
+  ColorCorrection = true,
+Sun = true,
+Lighting = true,
+BloomEffect = true
+}
+--settings {
+color.Enabled = false
+  color.Contrast = 0.15
+ color.Brightness = 0.1
+color.Saturation = 0.25
+color.TintColor = Color3.fromRGB(255, 222, 211)
+  bloom.Enabled = false
+ bloom.Intensity = 0.1
+sun.Enabled = false
+ sun.Intensity = 0.2
+  sun.Spread = 1
+bloom.Enabled = false
+bloom.Intensity = 0.05
+ bloom.Size = 32
+  bloom.Threshold = 1
+blur.Enabled = false
+blur.Size = 6
+ --settings }
+ if config.ColorCorrection then
+color.Enabled = true
+end
+  if config.Sun then
+sun.Enabled = true
+end
+if config.Terrain then
+--settings {
+  ter.WaterWaveSize = 0.1
+ter.WaterWaveSpeed = 22
+ter.WaterTransparency = 0.9
+ ter.WaterReflectance = 0.05
+--settings }
+end
+if config.Lighting then
+ -- settings {
+ light.Ambient = Color3.fromRGB(0, 0, 0)
+light.Brightness = 4
+light.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+ light.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+  light.ExposureCompensation = 0
+light.FogColor = Color3.fromRGB(132, 132, 132)
+light.GlobalShadows = true
+ light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
+light.Outlines = false
+ --settings }
+  end
+ local a = game.Lighting
+a.Ambient = Color3.fromRGB(33, 33, 33)
+a.Brightness = 5.69
+  a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+ a.ColorShift_Top = Color3.fromRGB(255, 247, 237)
+a.EnvironmentDiffuseScale = 0.105
+ a.EnvironmentSpecularScale = 0.522
+  a.GlobalShadows = true
+a.OutdoorAmbient = Color3.fromRGB(51, 54, 67)
+a.ShadowSoftness = 0.18
+ a.GeographicLatitude = -15.525
+  a.ExposureCompensation = 0.75
+ b.Enabled = true
+b.Intensity = 0.99
+b.Size = 9999
+  b.Threshold = 0
+ local c = Instance.new("ColorCorrectionEffect", a)
+c.Brightness = 0.015
+ c.Contrast = 0.25
+  c.Enabled = true
+c.Saturation = 0.2
+c.TintColor = Color3.fromRGB(217, 145, 57)
+ if getgenv().mode == "Summer" then
+c.TintColor = Color3.fromRGB(255, 220, 148)
+elseif getgenv().mode == "Autumn" then
+  c.TintColor = Color3.fromRGB(217, 145, 57)
+else
+ warn("没选择模式！  xgo")
+print("请选择一种模式")
+b:Destroy()
+ c:Destroy()
+end
+local d = Instance.new("DepthOfFieldEffect", a)
+  d.Enabled = true
+ d.FarIntensity = 0.077
+d.FocusDistance = 21.54
+d.InFocusRadius = 20.77
+  d.NearIntensity = 0.277
+ local e = Instance.new("ColorCorrectionEffect", a)
+  e.Brightness = 0
+e.Contrast = -0.07
+e.Saturation = 0
+ e.Enabled = true
+  e.TintColor = Color3.fromRGB(255, 247, 239)
+  local e2 = Instance.new("ColorCorrectionEffect", a)
+e2.Brightness = 0.2
+  e2.Contrast = 0.45
+ e2.Saturation = -0.1
+e2.Enabled = true
+e2.TintColor = Color3.fromRGB(255, 255, 255)
+local s = Instance.new("SunRaysEffect", a)
+s.Enabled = true
+ s.Intensity = 0.01
+  s.Spread = 0.146
+print("小go  RTX图形加载完毕!")end)
+local Main = Window:NewTab("通用",18923878915)
+local MainSection = Main:NewSection("xgo通用菜单")
+MainSection:NewButton("对玩家进行观战","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/eeeeeeeeeeeppppppppppppssassssssssss/refs/heads/main/%E8%A7%82%E6%88%98%E7%8E%A9%E5%AE%B6"))()end)
+MainSection:NewButton("玩家进入通知","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()end)
+MainSection:NewButton("小goFe合集","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/Fe"))()end)
+MainSection:NewButton("无限跳", "通用",false, function(Value)  loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E6%97%A0%E9%99%90%E8%B7%B3", true))()	end)
+MainSection:NewButton( "踏空行走",	"通用", function()loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()	end)
+MainSection:NewButton("小go全图传送点到哪传送哪","通用", function()mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "小go全图内任意传送" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpackend)
+MainSection:NewButton("铁拳（能打飞人）","通用", function()loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf6iQURzu1fqrytcnLBAvW34C9N55kS9g9G3CKz086rC47M6632sEd4ZZYB0AYgV.lua.txt'),true))()end)
+MainSection:NewButton("iw指令","通用",function()loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()end)
+MainSection:NewButton("动作🎊","通用", function()loadstring(game:HttpGet("https://yarhm.goteamst.com/scr?channel=afem"))()end)
+MainSection:NewButton("动作 R6","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/ocfi/Animations-obfus/refs/heads/main/obfus"))()end)
+MainSection:NewButton("goto飞车","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%A3%9E%E8%BD%A6"))()end)
+MainSection:NewButton("goto制作小宇飞","通用", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E4%B9%8B%E5%89%8D%E7%9A%84%E9%A3%9E%E8%A1%8C"))()end)
+MainSection:NewButton("goto制作小宇飞1.5百倍飞行","通用", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%B0%8F%E5%AE%87%E9%A3%9E"))()end)
+MainSection:NewButton("黑洞小go汉化","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%BB%91%E6%B4%9E2"))()end)
+MainSection:NewButton("黑洞 汉化","通用", function() loadstring(game:HttpGet("https://pastebin.com/raw/jQd1HedN"))()end)
+MainSection:NewButton("黑洞 0.4","通用", function()  loadstring(game:HttpGet('https://gist.githubusercontent.com/AxolotlBmgo/8888080921c2b426a32dd9ff587baff1/raw/d45e03afed3c1716f36523bbf6dd741d3d2aad00/gistfile1.txt'))()end)
+MainSection:NewButton("黑洞 1.5","通用", function()  loadstring(game:HttpGet('https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E9%BB%91%E6%B4%9E'))()end)
+MainSection:NewButton("黑洞脚本按E","通用", function() local UserInputService = game:GetService("UserInputService")
+local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local Folder = Instance.new("Folder", game:GetService("Workspace"))
+local Part = Instance.new("Part", Folder)
+local Attachment1 = Instance.new("Attachment", Part)
+Part.Anchored = true
+Part.CanCollide = false
+Part.Transparency = 1
+local Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+local NetworkAccess =
+coroutine.create(
+function()
+settings().Physics.AllowSleep = false
+while game:GetService("RunService").RenderStepped:Wait() do
+for _, Players in next, game:GetService("Players"):GetPlayers() do
+if Players ~= game:GetService("Players").LocalPlayer then
+Players.MaximumSimulationRadius = 0
+sethiddenproperty(Players, "SimulationRadius", 0)
+end
+end
+game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.pow(math.huge, math.huge)
+setsimulationradius(math.huge)
+endend)
+coroutine.resume(NetworkAccess)
+local function EnhanceAndInvinciblePart(part)
+ if
+part:IsA("Part") and part.Anchored == false and part.Parent:FindFirstChild("Humanoid") == nil and
+part.Parent:FindFirstChild("Head") == nil and
+part.Name ~= "Handle"
+then
+Mouse.TargetFilter = part
+for _, x in next, part:GetChildren() do
+if
+x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or
+x:IsA("BodyThrust") or
+x:IsA("BodyVelocity") or
+x:IsA("RocketPropulsion")
+then
+x:Destroy()
+end
+end
+if part:FindFirstChild("Attachment") then
+part:FindFirstChild("Attachment"):Destroy()
+end
+if part:FindFirstChild("AlignPosition") then
+part:FindFirstChild("AlignPosition"):Destroy()
+end
+if part:FindFirstChild("Torque") then
+part:FindFirstChild("Torque"):Destroy()
+end
+part.CanCollide = false
+local Torque = Instance.new("Torque", part)
+Torque.Torque = Vector3.new(100000, 100000, 100000)
+local AlignPosition = Instance.new("AlignPosition", part)
+local Attachment2 = Instance.new("Attachment", part)
+Torque.Attachment0 = Attachment2
+AlignPosition.MaxForce = 9999999999999999
+AlignPosition.MaxVelocity = math.huge
+AlignPosition.Responsiveness = 200
+AlignPosition.Attachment0 = Attachment2
+AlignPosition.Attachment1 = Attachment1
+end end
+for _, part in next, game:GetService("Workspace"):GetDescendants() do
+EnhanceAndInvinciblePart(part)
+end
+game:GetService("Workspace").DescendantAdded:Connect(
+function(part)
+EnhanceAndInvinciblePart(part)  end)
+-- 监听按键事件
+UserInputService.InputBegan:Connect(
+function(input, isProcessed)
+if input.KeyCode == Enum.KeyCode.E and not isProcessed then
+Updated = Mouse.Hit + Vector3.new(0, 5, 0)endend)
+-- 使用物理引擎移动所有物体
+spawn(
+function()
+while game:GetService("RunService").RenderStepped:Wait() do
+Attachment1.WorldCFrame = Updatedendend)end)
+MainSection:NewButton("黑洞v3","通用", function()loadstring(game:HttpGet("https://pastefy.app/vaXK1Kgy/raw"))()end)
+MainSection:NewButton("卡哇伊黑洞（可以锁人的哦）","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%BB%91%E6%B4%9E",true))()end)
+MainSection:NewButton("甩人通用","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E7%94%A9%E4%BA%BA%E9%80%9A%E7%94%A8"))()end)
+MainSection:NewButton("锁定甩飞，不过你也会死","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-FREAKY-FLING/main/kawaii_freaky_fling.lua"))()end)
+MainSection:NewButton("反挂机","通用", function()loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()end)
+MainSection:NewButton("F3X","通用", function() loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()end)
+MainSection:NewButton("工具包（三个经典工具）","通用", function()loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	  	end)
+MainSection:NewButton("工具挂","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/StandAwekening.lua"))()end)
+Tab:AddButton({	Name = "建筑工具",	"通用", function()		Hammer = Instance.new("HopperBin")		Hammer.Name = "锤子"		Hammer.BinType = 4		Hammer.Parent = game.Players.LocalPlayer.Backpack		Clone = Instance.new("HopperBin")		Clone.Name = "克隆"		Clone.BinType = 3		Clone.Parent = game.Players.LocalPlayer.Backpack		Grab = Instance.new("HopperBin")		Grab.Name = "抓取"		Grab.BinType = 2	end)
+MainSection:NewButton("xgo键盘","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo%E5%BB%BA%E7%9B%98.lua", true))()end)
+MainSection:NewButton("键盘","通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()end)
+Tab:AddButton({	Name = "替身",	"通用", function()  loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrillexMe/SkrillexLoader/main/SkrillexLoadMain')))()end)
+Tab:AddButton({	Name = "爬墙",	"通用", function()loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()end) 
+local Tab = Window:MakeTab({Name = "通用2",Icon = "rbxassetid://18923878915",PremiumOnly = false)
+Tab:AddButton({	Name = "xgo制作幽灵状态 可能会掉血",	"通用", function() local offset = 1100 
+local LocalPlayer = game.Players.LocalPlayer
+local Backpack = LocalPlayer.Backpack
+local Character = LocalPlayer.Character
+local invisible = false
+local grips = {}
+local heldTool
+local gripChanged
+local handle
+local weld
+function setDisplayDistance(distance)
+for _,player in pairs(game.Players:GetPlayers()) do if player.Character and player.Character:FindFirstChildWhichIsA("Humanoid") then player.Character:FindFirstChildWhichIsA("Humanoid").NameDisplayDistance = distance player.Character:FindFirstChildWhichIsA("Humanoid").HealthDisplayDistance = distance end end
+end
+local tool = Instance.new("Tool", Backpack)
+tool.Name = "xgo 幽灵状态可能会掉血"
+tool.RequiresHandle = false
+tool.CanBeDropped = false
+tool.Equipped:Connect(function() wait()
+if not invisible then
+invisible = true
+tool.Name = "xgo 幽灵状态可能会掉血"
+if handle then handle:Destroy() end if weld then weld:Destroy() end
+handle = Instance.new("Part", workspace) handle.Name = "Handle" handle.Transparency = 1 handle.CanCollide = false handle.Size = Vector3.new(2, 1, 1)
+weld = Instance.new("Weld", handle) weld.Part0 = handle weld.Part1 = Character.HumanoidRootPart weld.C0 = CFrame.new(0, offset-1.5, 0)
+setDisplayDistance(offset+100)
+workspace.CurrentCamera.CameraSubject = handle
+Character.HumanoidRootPart.CFrame = Character.HumanoidRootPart.CFrame * CFrame.new(0, offset, 0)
+Character.Humanoid.HipHeight = offset
+Character.Humanoid:ChangeState(11)
+for _,child in pairs(Backpack:GetChildren()) do if child:IsA("Tool") and child ~= tool then grips[child] = child.Grip end end
+elseif invisible then
+invisible = false
+tool.Name = "xgo 幽灵状态可能会掉血"
+if handle then handle:Destroy() end if weld then weld:Destroy() end
+for _,child in pairs(Character:GetChildren()) do if child:IsA("Tool") then child.Parent = Backpack end end
+for tool,grip in pairs(grips) do if tool then tool.Grip = grip end end
+heldTool = nil
+setDisplayDistance(100)
+workspace.CurrentCamera.CameraSubject = Character.Humanoid
+Character.Animate.Disabled = false
+Character.HumanoidRootPart.CFrame = Character.HumanoidRootPart.CFrame * CFrame.new(0, -offset, 0)
+Character.Humanoid.HipHeight = 0
+Character.Humanoid:ChangeState(11)
+end
+tool.Parent = Backpack
+end)
+Character.ChildAdded:Connect(function(child) wait()
+if invisible and child:IsA("Tool") and child ~= heldTool and child ~= tool then
+heldTool = child
+local lastGrip = heldTool.Grip
+if not grips[heldTool] then grips[heldTool] = lastGrip end
+for _,track in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do track:Stop() end
+Character.Animate.Disabled = true
+heldTool.Grip = heldTool.Grip*(CFrame.new(0, offset-1.5, 1.5) * CFrame.Angles(math.rad(-90), 0, 0))
+heldTool.Parent = Backpack
+heldTool.Parent = Character
+if gripChanged then gripChanged:Disconnect() end
+gripChanged = heldTool:GetPropertyChangedSignal("Grip"):Connect(function() wait()
+if not invisible then gripChanged:Disconnect() end
+if heldTool.Grip ~= lastGrip then
+lastGrip = heldTool.Grip*(CFrame.new(0, offset-1.5, 1.5) * CFrame.Angles(math.rad(-90), 0, 0))
+heldTool.Grip = lastGrip
+heldTool.Parent = Backpack
+heldTool.Parent = Character
+end    end)end    end)  end)
+MainSection:NewButton("查玩家ip地址 聊天发送（只能吓唬人 因为是随机数字）",	"通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/BingusWR/FakeRobloxIPGrabber/refs/heads/main/FERobloxIpGrabberScrip"))()end)
+MainSection:NewButton("小go制作玩家控制喜欢俄亥俄的，可以搭配起来超级好用",	"通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6"))()end)
+MainSection:NewButton( "小go超级无敌旋转",	"通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%88%9D%E4%BB%A3%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()  end)
+MainSection:NewButton( "小go超级无敌旋转2.0",	"通用", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()end)
+MainSection:NewButton("一键脱衣（衬衫之类）",	"通用", function()local player = game.Players.LocalPlayerlocal character = player.Character or player.CharacterAdded:Wait()local function removeClothes()for _, item in pairs(character:GetChildren()) doif item:IsA("Shirt") or item:IsA("Pants") then  item:Destroy()endendend removeClothes()	end)
+MainSection:NewButton("xgo一键脱衣2.0",	"通用", function()local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+--[[Network]]
+coroutine.resume(coroutine.create(function()
+	settings().Physics.AllowSleep = false;
+	game.RunService.RenderStepped:Connect(function()
+		for i, v in pairs(game.Players:GetPlayers()) do
+			if v ~= plr then
+				v.MaximumSimulationRadius = 0.1;
+				v.SimulationRadius = 0;
+			else
+				v.MaximumSimulationRadius = math.pow(math.huge, math.huge);
+				v.SimulationRadius = math.pow(math.huge, 2);
+			end
+		end
+	end)
+end))
+
+function ftp(str)
+local pt = {};
+if str ~= 'me' and str ~= 'random' then
+for i, v in pairs(game.Players:GetPlayers()) do
+if v.Name:lower():find(str:lower()) then
+table.insert(pt, v);
+end
+end
+elseif str == 'me' then
+table.insert(pt, plr);
+	elseif str == 'random' then
+		table.insert(pt, game.Players:GetPlayers()[math.random(1, #game.Players:GetPlayers())]);
+end
+return pt;
+end
+
+for _, v in pairs(hum:GetAccessories()) do
+	local b = v.Handle;
+	b.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0);
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	still.MaxTorque = Vector3.new(math.huge, math.huge, math.huge);
+	still.AngularVelocity = Vector3.new(0, 0, 0);
+	local align = Instance.new('AlignPosition', b);
+	align.MaxForce = 1000000;
+	align.MaxVelocity = math.huge;
+	align.RigidityEnabled = false;
+	align.ApplyAtCenterOfMass = true;
+	align.Responsiveness = 200;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+end
+
+local par = {};
+for _, v in pairs(mov) do
+	local parr = Instance.new('Part', workspace);
+	parr.Anchored = true;
+	parr.Size = Vector3.new(1, 1, 1);
+	parr.Transparency = 1;
+	parr.CanCollide = false;
+	table.insert(par, parr);
+end
+
+local rotx = 0;
+local rotz = math.pi / 2;
+local height = 0;
+local heighti = 1;
+local offset = 10;
+local speed = 0.5;
+local mode = 4;
+local angular = Vector3.new(0, 0, 0);
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	rotx = rotx + speed / 100;
+	rotz = rotz + speed / 100;
+	l = (l >= 360 and 1 or l + speed);
+	
+	for i, v in pairs(par) do
+		v.CFrame = CFrame.new(chr.HumanoidRootPart.Position) * CFrame.fromEulerAnglesXYZ(0, math.rad(l + (360 / #par) * i + speed), 0) * CFrame.new(offset, 0, 0);
+	end
+	
+	if heighti == 1 then
+		height = height + speed / 100;
+	elseif heighti == 2 then
+		height = height - speed / 100;
+	end
+	if height > 2 then
+		heighti = 2;
+	end
+	if height < -1 then
+		heighti = 1;
+	end
+	
+	if mode == 1 then
+		for _, v in pairs(mov) do
+			v.Position = Vector3.new(math.sin(rotx) * offset, 0, math.sin(rotz) * offset);
+		end
+	elseif mode == 2 then
+		for _, v in pairs(mov) do
+			v.Position = Vector3.new(offset, height, offset);
+		end
+	elseif mode == 3 then
+		for _, v in pairs(mov) do
+			v.Position = Vector3.new(math.sin(rotx) * offset, height, math.sin(rotz) * offset);
+		end
+	elseif mode == 4 then
+		for i, v in pairs(mov) do
+			v.Position = Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Z);
+		end
+	elseif mode == 5 then
+		for i, v in pairs(mov) do
+			v.Position = Vector3.new((math.sin(rotx)) * offset, height, (math.cos(rotz) - i) * offset);
+		end
+	elseif mode == 6 then
+		for i, v in pairs(mov) do
+			v.Position = Vector3.new((math.sin(rotx)) * offset, height, (math.tan(rotz) - i) * offset);
+		end
+	elseif mode == 7 then
+		for i, v in pairs(mov) do
+			v.Position = Vector3.new(math.cos(rotx * i) * offset, 0, math.cos(rotz * i) * offset);
+		end
+	elseif mode == 8 then
+	for i, v in pairs(mov) do
+			v.Position = Vector3.new(math.sin(rotx) * i * offset, 0, math.sin(rotz) * i * offset);
+		end
+	elseif mode == 9 then
+		pcall(function()
+			local so = nil;
+			for k, b in pairs(chr:GetChildren()) do
+				if b:IsA'Tool' then
+					for h, j in pairs(b:GetDescendants()) do
+						if j:IsA'Sound' then
+							so = j;
+						end
+					end
+				end
+			end
+			if so ~= nil then
+				offset = so.PlaybackLoudness / 35;
+				speed = so.PlaybackLoudness / 500;
+				angular = Vector3.new(0, so.PlaybackLoudness / 75, 0);
+			end
+		end)
+		for i, v in pairs(mov) do
+			v.Position = Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Z);
+		end
+	elseif mode == 10 then
+		offset = height * 15;
+		for i, v in pairs(mov) do
+			v.Position = Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Z);
+		end
+	elseif mode == 11 then
+		for i, v in pairs(mov) do
+			v.Position = Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(plr:GetMouse().Hit.p)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(plr:GetMouse().Hit.p)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(plr:GetMouse().Hit.p)).Z) + Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Z);
+		end
+	end
+	for _, v in pairs(mov2) do
+		v.AngularVelocity = angular;
+	end
+end)
+game.Players.LocalPlayer.Chatted:Connect(function(c)
+	if c:split(' ')[1] == '.orbit' then
+		for _, v in pairs(mov) do
+			chr = ftp(c:split(' ')[2])[1].Character;
+			v.Parent = ftp(c:split(' ')[2])[1].Character.HumanoidRootPart;
+		end
+	end
+	if c:split(' ')[1] == '.speed' then
+		speed = tonumber(c:split(' ')[2]);
+	end
+	if c:split(' ')[1] == '.mode' then
+		mode = tonumber(c:split(' ')[2]);
+	end
+	if c:split(' ')[1] == '.offset' then
+		offset = tonumber(c:split(' ')[2]);
+	end
+	if c:split(' ')[1] == '.angular' then
+		angular = Vector3.new(tonumber(c:split(' ')[2]), tonumber(c:split(' ')[3]), tonumber(c:split(' ')[4]));
+	end
+end)
+
+for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
+game:GetService("RunService").Heartbeat:connect(function()
+v.Velocity = Vector3.new(-30,0,0)    end)   end   end
+ game:GetService("StarterGui"):SetCore("SendNotification", { 
+Title = "xgo 一键脱衣2.0";
+Text = "警视觉效果";
+Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150")
+Duration = 16;      end)
+Tab:AddButton({	Name = "鼠标（手机不建议用）",	"通用", function()loadstring(game:HttpGet(('https://pastefy.ga/V75mqzaz/raw'),true))()	end)
+MainSection:NewButton("小go 在外网找的几个道具","通用",function()  loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/b04e28198c8eeb1408921a1560792152/raw/67739a2bc571093976e6cd7e51fb526dedd75861/tools",true))()  end)
+MainSection:NewButton("聊天绘画图","通用",function() loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/pamn/refs/heads/main/xz"))()  end)
+MainSection:NewButton("死亡笔记","通用",function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0"))()  end)
+MainSection:NewButton("娱乐特效","通用",function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/xgoizlx/refs/heads/main/ui"))()  end) 
+
+
+
+
+
+
