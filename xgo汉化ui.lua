@@ -372,7 +372,7 @@ function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 		local Notification = notificationContainer:FindFirstChild('Template') or nil
 		if Notification == nil then
 			warn("\n无法通知，查找模板错误")
-			warn("\n参数: \nTitle - "..Title.."\n内容 - "..Content.."\n照片 - "..tostring(Image))
+			warn("\n参数: \n标题 - "..Title.."\n内容 - "..Content.."\n照片 - "..tostring(Image))
 			return
 		end
 		local notifClone = Notification:Clone()
@@ -3378,7 +3378,7 @@ function dec(data)
 end
 
 function StartAntiKick()
-     hookfunction(LocalPlayer.Kick,(function() Notify("Anti Kick","DomainX has avoided the game kicking you locally",4400697855) wait(9e9) end))
+     --hookfunction(LocalPlayer.Kick,(function() Notify"反踢","DomainX避免了游戏在当地踢你(",4400697855) wait(9e9) end)) xgo 修改
 end
 
 function StartAntiIdle()
