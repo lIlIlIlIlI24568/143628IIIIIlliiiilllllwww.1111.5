@@ -205,7 +205,7 @@ local RotatingBar = false
 local CachedUI = {}
 local cachedcoreguis = {}
 local NotificationsEnabled = true
-local coreguis = {"玩家名单","聊天","Emotes菜单","健康","背包"}
+local coreguis = {"PlayerList","Chat","EmotesMenu","Health","Backpack"}
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
 
