@@ -205,17 +205,23 @@ local RotatingBar = false
 local CachedUI = {}
 local cachedcoreguis = {}
 local NotificationsEnabled = true
-local coreguis = {"PlayerList","Chat","EmotesMenu","Health","Backpack"}
+local coreguis = {"玩家名单","聊天","Emotes菜单","健康","背包"}
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
 
 -- 游戏列表
 
 local UniversalScripts = {
-    xgo = {
-		Name = "xgo 主页",
-		Author = "xgo 主页",
-		Loadstring = "https://raw.githubusercontent.com/xgomn/Bhayjkedswfgvxtgjoplkj/refs/heads/main/goto",
+    xgojp = {
+		Name = "xgo 旧版本",
+		Author = "xgo 进入旧版本模式",
+		Loadstring = "https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo",
+	    Colour = Color3.fromRGB(57, 57, 57),
+	},
+	xgoyx = {
+		Name = "xgo 游戏整合",
+		Author = "xgo 所有国内外游戏整合",
+		Loadstring = "https://raw.githubusercontent.com/xgomn/pamn/refs/heads/main/%E6%B8%B8%E6%88%8F%E6%95%B4%E5%90%88%E5%99%A8",
 	    Colour = Color3.fromRGB(57, 57, 57),
 	},
 	xgov1 = {
@@ -228,6 +234,12 @@ local UniversalScripts = {
 		Name = "xgo 游戏中心v2",
 		Author = "xgo 游戏v2",
 		Loadstring = "https://raw.githubusercontent.com/xgomn/Jsjhsbwbjsksnbebshs/refs/heads/main/V2",
+	    Colour = Color3.fromRGB(57, 57, 57),
+	},
+    xgo = {
+		Name = "xgo 主页",
+		Author = "xgo 主页",
+		Loadstring = "https://raw.githubusercontent.com/xgomn/Bhayjkedswfgvxtgjoplkj/refs/heads/main/goto",
 	    Colour = Color3.fromRGB(57, 57, 57),
 	},
 }
@@ -2331,7 +2343,7 @@ function OpenHome()
 				wait(0.001)
 			end
 		end
-		-- Keybind
+		-- 密钥绑定
 		local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 		local tween = TweenService:Create(Domain.Home.Keybind, transitionInfo, {BackgroundTransparency = 0})
 		tween:Play()
@@ -3149,7 +3161,7 @@ function Serverhop()
 			end	
 			CloseServerhopMenu()
 		elseif Amount > 0 then
-			-- Found more than 0 servers, let them know, then wait, then teleport
+			-- 找到了超过0的服务器，让他们知道，然后等待，然后传送
 			if not ServerhopCancelled then
 				Domain.Serverhop.ProgressInfo.Text = "找到服务器"
 				local transitionInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quint)
@@ -3366,7 +3378,7 @@ function dec(data)
 end
 
 function StartAntiKick()
-	--hookfunction(LocalPlayer.Kick,(function() Notify("Anti Kick","DomainX has avoided the game kicking you locally",4400697855) wait(9e9) end))
+     hookfunction(LocalPlayer.Kick,(function() Notify("Anti Kick","DomainX has avoided the game kicking you locally",4400697855) wait(9e9) end))
 end
 
 function StartAntiIdle()
@@ -3675,15 +3687,15 @@ function ContinueBoot()
 		Toast("成功升级许可证","GoThamBlack")
 	end
 
-	Toast("谢谢使用xgo Hub "..Release.. ", "..LocalPlayer.DisplayName,"GothamBold")
+	Toast("谢谢使用xgo Hub 版本:"..Release.. ", "..LocalPlayer.DisplayName,"GothamBold")
 
-	--if protected then
-	--	if Client ~= "Universal" then
-	--		Toast(Client.." has protected the interface from detection")
-	--	else
-	--		Toast("Your executor has protected the interface from detection")
-	--	end
-	--end
+	if protected then
+		if Client ~= "Universal" then
+			Toast(Client.." 从检测中保护了界面")
+		else
+			Toast("您的执行者已保护接口免于检测")
+		end
+	end
 	if CheckWritefile() then
 		if isfile("DomainX Wallpaper.txt") then
 			if isfile(readfile("DomainX Wallpaper.txt")) then
@@ -3700,7 +3712,7 @@ function ContinueBoot()
 		end
 	end
 
-	-- Sorts out script order
+	-- 整理脚本订单
 	Domain.Scripts.List.Template.Size = UDim2.new(0.979, 0,0.055, 0)
 	Domain.Scripts.List.Template.Visible = false
 	local newpos = 1
@@ -3722,12 +3734,12 @@ function ContinueBoot()
 	end
 
 	if CheckWritefile() == true then
-		-- Writefile check! true
-		if not isfolder(CustomFolderName) then -- folder no existo,
-			makefolder(CustomFolderName) -- make folder
-		else -- folder existo
+		-- 写入文件检查！ 真正
+		if not isfolder(CustomFolderName) then -- 文件夹不存在，
+			makefolder(CustomFolderName) -- 制作文件夹
+		else -- 文件夹存在
 			local LoadedCustomScripts = 0
-			for _, file in ipairs(listfiles(CustomFolderName)) do -- check files
+			for _, file in ipairs(listfiles(CustomFolderName)) do -- 检查文件
 				local NewCustomScript = game:GetService("HttpService"):JSONDecode(readfile(file))
 				local NewTable = {
 					Name = NewCustomScript.Name,
@@ -3786,18 +3798,18 @@ function CheckLatest()
 	if DebugMode then
 		warn("DomainX - 检查版本")
 	end
-	--loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/routine',true))()
-	--local ver = game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/latest')
-	--print(ver)
-	--if tonumber(ver) > Release then
-	--	Connected = false
-	--	warn("Not up to date, needs to be on "..tostring(game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/latest')))
-	--	return false
-	--else
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/routine',true))()
+	local ver = game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/latest')
+	print(ver)
+	if tonumber(ver) > Release then
+		Connected = false
+		warn("Not up to date, needs to be on "..tostring(game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/latest')))
+		return false
+	else
 	Connected = true
-	--end
+	end
 end
-
+--xgo3801 3809 3806 3805 3804 3803 3802
 
 
 function BootDomainX()
@@ -3843,7 +3855,7 @@ end
 
 
 
--- Main functionality of core buttons
+-- 核心按钮的主要功能
 
 Domain.Main.Buttons.HomeButton.Interact.MouseButton1Click:Connect(function()
 	local transitionInfo = TweenInfo.new(0.2, Enum.EasingStyle.Quint)
@@ -3937,7 +3949,7 @@ end)
 
 function Rejoin()
 	if #game.Players:GetPlayers() <= 1 then
-		LocalPlayer:Kick("\nDMNX - Rejoining Server")
+		LocalPlayer:Kick("\nDMNX - 重新加入服务器")
 		wait()
 		game:GetService('TeleportService'):Teleport(game.PlaceId, LocalPlayer)
 	else
@@ -3950,7 +3962,7 @@ end
 function Invisible()
 	if invisRunning then return end
 	invisRunning = true
-	-- Full credit to AmokahFox @V3rmillion
+	-- 对Amokahfox @ V3RMillion的全额信用
 	local Player = LocalPlayer
 	repeat wait(.1) until Player.Character
 	local Character = Player.Character
@@ -4126,7 +4138,7 @@ Domain.Player.Fly.Interact.MouseButton1Click:Connect(function()
 		Domain.Player.Fly.Popup.Title.Text = "飞行"
 		Domain.Player.Fly.Interact.Image = "rbxassetid://3926305904"
 		Domain.Player.Fly.Interact.ImageRectOffset = Vector2.new(124,364)
-		Toast("残疾人航班")
+		Toast("飞行模式")
 		Unfly()
 	else 
 		local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
@@ -4259,7 +4271,7 @@ game.Players.PlayerAdded:Connect(function(Player)
 	end
 	Domain.Home.Data.data.Players.Text = "Players: <b>"..tostring(#game.Players:GetChildren()).."/"..tostring(game.Players.MaxPlayers).."</b>"
 	if Player.Name == "GTAFAW" then
-		Toast("DomainX，Shlex的开发人员加入了您的服务器")
+		Toast("脚本作者xxxxgo 加入了您的服务器!!!!!")
 	end
 	if LocalPlayer:IsFriendsWith(Player.UserId) then
 		Notify("朋友加入了",Player.Name..", 你的朋友加入了你的服务器",4335480896)
@@ -4281,7 +4293,7 @@ game.Players.PlayerRemoving:Connect(function(Player)
 end)
 
 local mouse = game:GetService('Players').LocalPlayer:GetMouse()
--- Walkspeed
+-- 步行速度
 local Walkslider = Domain.Player.Speed.Action
 local Walklabel = Domain.Player.Speed.Title
 local Walkbar = Domain.Player.Speed.Action.Amount
@@ -4313,7 +4325,7 @@ Walkslider.MouseButton1Down:Connect(function()
 	WalkupdateSlider()
 end)
 
--- Jumppower
+-- 跳跃力量
 local Jumpslider = Domain.Player.Jumppower.Action
 local Jumplabel = Domain.Player.Jumppower.Title
 local Jumpbar = Domain.Player.Jumppower.Action.Amount
@@ -4346,7 +4358,7 @@ Jumpslider.MouseButton1Down:Connect(function()
 	JumpupdateSlider()
 end)
 
--- FlySpeed
+-- 飞速
 local flyslider = Domain.Player.FlySpeed.Action
 local flylabel = Domain.Player.FlySpeed.Title
 local flybar = Domain.Player.FlySpeed.Action.Amount
@@ -4391,7 +4403,7 @@ Domain.JoinCodes.CreateJC.MouseButton1Click:Connect(function()
 		Toast("创建加入代码..")
 		local result = game:HttpGet("https://shlex.dev/api/joincodes/createcode.php?gid=".. game.PlaceId ..":".. game.JobId)
 		Domain.CreateCode.Visible = true
-		if result ~= "fail" then
+		if result ~= "失败" then
 			Domain.CreateCode.GeneratedCode.TextEditable = false
 			Domain.CreateCode.GeneratedCode.ClearTextOnFocus = false
 			Domain.CreateCode.GeneratedCode.Text = result
@@ -4628,6 +4640,7 @@ LocalPlayer.CharacterAdded:Connect(function(Character)
 	tween:Play()
 	Jumplabel.Text = "50 跳跃力量"
 	Walklabel.Text = "16 步行速度"
+    Flylabel.Text = "1 飞行速度"   --xgo 标记修改处
 end)
 
 function BoostFrames()
@@ -4686,7 +4699,7 @@ end)
 function CheckTime()
 
 	if tonumber(GetDate():format("#h")) > 12 then
-		Domain.Home.Welcome.Text = "晚上, "..LocalPlayer.DisplayName
+		Domain.Home.Welcome.Text = "欢迎使用 "..LocalPlayer.DisplayName
 	else
 		Domain.Home.Welcome.Text = "xgo 欢迎"..LocalPlayer.DisplayName
 	end
