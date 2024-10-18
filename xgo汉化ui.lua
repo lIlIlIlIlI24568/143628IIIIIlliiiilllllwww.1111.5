@@ -1141,7 +1141,7 @@ function OpenPlayerConfig()
 			end
 		end
 		if o.ClassName == "ImageLabel" or o.ClassName == "ImageButton" then
-			if o.Name == "阴影" then
+			if o.Name == "Shadow" then
 				local transitionInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quint)
 				local tween = TweenService:Create(o, transitionInfo, {ImageTransparency = 0.8})
 				tween:Play()
@@ -2148,7 +2148,7 @@ function OpenHome()
 				local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 				local tween = TweenService:Create(mitem, transitionInfo, {TextTransparency = 0})
 				tween:Play()
-			elseif mitem.Name ~= "ID" and mitem:IsA("Frame") or mitem:IsA("TextLabel") or mitem:IsA("TextButton") or mitem:IsA("ImageButton") or mitem:IsA("ImageLabel") or mitem:IsA("TextBox") then
+			elseif mitem.Name ~= "音乐 ID" and mitem:IsA("Frame") or mitem:IsA("TextLabel") or mitem:IsA("TextButton") or mitem:IsA("ImageButton") or mitem:IsA("ImageLabel") or mitem:IsA("TextBox") then
 				local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 				local tween = TweenService:Create(mitem, transitionInfo, {BackgroundTransparency = 0})
 				tween:Play()
