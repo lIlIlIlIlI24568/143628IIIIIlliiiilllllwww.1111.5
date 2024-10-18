@@ -4639,8 +4639,7 @@ LocalPlayer.CharacterAdded:Connect(function(Character)
 	local tween = TweenService:Create(Jumpbar, transitionInfo, {Size = UDim2.new(0,0,1,0)})
 	tween:Play()
 	Jumplabel.Text = "50 跳跃力量"
-	Walklabel.Text = "16 步行速度" 
-	flylabel.Text = "1 飞行速度"--xgo 标记修改处
+	Walklabel.Text = "16 步行速度"
 end)
 
 function BoostFrames()
