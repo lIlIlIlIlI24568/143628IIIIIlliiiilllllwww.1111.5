@@ -230,202 +230,16 @@ local UniversalScripts = {
 		Loadstring = "https://raw.githubusercontent.com/xgomn/Jsjhsbwbjsksnbebshs/refs/heads/main/V2",
 	    Colour = Color3.fromRGB(57, 57, 57),
 	},
-	InfiniteYield = {
-		Name = "无限产量",
-		Author = "Edge",
-		Loadstring = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
-		Colour = Color3.fromRGB(57, 57, 57),
-	},
-	SiriusUni = {
-		Name = "天狼星普遍",
-		Author = "Sirius",
-		Loadstring = "https://raw.githubusercontent.com/shlexware/Sirius/request/game/Universal",
-		Colour = Color3.fromRGB(188, 57, 59),
-	},
-	SimpleSpy = {
-		Name = "简单的间谍",
-		Author = "exx",
-		Loadstring = "https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua",
-		Colour = Color3.fromRGB(0, 170, 127),
-	},
-	cmdx = {
-		Name = "CMD-X",
-		Author = "Various Developers",
-		Loadstring = "https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",
-		Colour = Color3.fromRGB(179, 97, 42),
-	},
-	Dex = {
-		Name = "德克斯探险家",
-		Author = "Moon",
-		Loadstring = "https://pastebin.com/raw/fPP8bZ8Z",
-		Colour = Color3.fromRGB(120, 170, 160),
-	},
-
 }
 
 local DetectionScripts = {
-	spongebobguess = {
-		Name = "传送到完成",
-		Description = "此脚本将传送到游戏的完成. xgo 留言",
-		Games = {8494013385},
-		Premium = false,
-		Loadstring = "https://pastebin.com/raw/dipyRqzR",
-	},
-	DecayingWinter = {
-		Name = "腐朽的冬天",
-		Description = "",
-		Games = {7551121821},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/Aidez/decaying_winter/main/GOODWILL_COMMAND_SCRIPT",
-	},
-	bedwars = {
-		Name = "是矮人",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {6872265039},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua",
-	},
-	Vision = {
-		Name = "Vision",
-		Description = "一个带有一些高品质游戏的脚本集线器",
-		Games = {6769764667,6847090259,7305309231,8116417963},
+	xgoyx = {
+		Name = "xgo 游戏整合器",
+		Description = "谢谢使用:以下是xgo国内外的所有脚本 ",
+		Games = {1480782352,3264293423,2783074114,4221956550,3956729696,2033913602,4272959516,6279211894,1512676568,2851381018,3997370929,170247232,4019583467,10384852727,1430007363,6170013953,6196633103,5500599119,4777817887,6537318971,4417057922,6592224793,445448798,911750776,4775716170,6466404775,5800312217,847722000,1526814825,1214576306,3808081382,2471084,6143226737,994732206,1119466531,1335695570,1415710834,1268927906,3741075732,3624423521,1000233041,2294168059,2440500124,1235188606,4367208330},
 		Premium = false,
 		KeySys = true,
-		Loadstring = "https://visionhub.dev/script.lua",
-	},
-	DarkHub = {
-		Name = "Dark Hub",
-		Description = "迄今最受欢迎的剧本中心之一，妥协.",
-		Games = {2377868063,263761432,606849621,3527629287,2555870920,5081773298,2551991523,1962086868,3101667897,6483072762,6494529140,3297964905,5523314295,301549746,5041144419,370731277,142823291,621129760,6284583030,5104202731},
-		Premium = false,
-		KeySys = true,
-		Loadstring = "https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init",
-	},
-	IdentityFraud = {
-		Name = "Identity Fraud",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {338521019},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/tkorra/Identity_Fraud/main/main.lua",
-	},
-	CriticalStrike = {
-		Name = "Critical Strike",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {111311599},
-		Premium = false,
-		Loadstring = "https://pastebin.com/raw/WrF6UWQg",
-	},   		
-	DBR = {
-		Name = "Dragon Ball Rage",
-		Description = "DomainX独家，我们的开发人员，Urbanstorm",
-		Games = {71315343},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/Urbanstorms/DomainX/main/DBR.lua",
-	},
-	Vega = {
-		Name = "Vega Remover",
-		Description = "一个强大的工具，可在咖啡式游戏中删除已知的障碍",
-		Games = {5580097107,738548299,610172644,1217895158,3522042406,679498303},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/realvega/VegaRemover/main/source",
-	},
-	KaijuParadise = {
-		Name = "Kaiju Paradise",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {6456351776},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/realoneofu/RealZzHub/main/Main.lua",
-	},
-	FNF = {
-		Name = "Friday Night Funkin'",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {6447798030},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",
-	},
-	PrisonLife = {
-		Name = "Prison Life",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {155615604},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife",
-	},
-	andestsim = {
-		Name = "Anime Destroyer Simulator",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {7082539621},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/DevPolarhub/ScriptPacks/main/Anime%20Destroyers%20Simulator",
-	},
-	towerdefensesim = {
-		Name = "Tower Defense Simulator",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {3260590327},
-		Premium = false,
-		Loadstring = "https://pastebin.com/raw/Mjryt8Mm",
-	},
-	DemonSlayer = {
-		Name = "Demon Slayer RPG 2",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {4734949248},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/HDTerebi/DSRPG2/master/Shitty%20GUI.lua",
-	},
-	NDS = {
-		Name = "Natural Disaster Survival",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {189707},
-		Premium = false,
-		Loadstring = "https://gist.githubusercontent.com/TurkOyuncu99/7c75386107937fa006304efd24543ad4/raw/8d759dfcd95d39949c692735cfdf62baec0bf835/cafwetweg",
-	},
-	RoGhoul = {
-		Name = "Ro-Ghoul",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {914010731},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/z4gs/scripts/master/Ro-Ghoul%20Auto%20Farm.lua",
-	},
-	MegaEasyObby = {
-		Name = "Mega Easy Obby",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {3587619225},
-		Premium = false,
-		Loadstring = "https://pastebin.com/raw/X361rzKq",
-	},
-	NinjaLegends = {
-		Name = "Ninja Legends",
-		Description = "为ninja传说提供了全功能自动磁带脚本",
-		Games = {3956818381},
-		Premium = false,
-		Loadstring = "https://pastebin.com/raw/Q39hYJ8V",
-	},
-	MyRestaurant = {
-		Name = "My Restaurant",
-		Description = "为我的餐厅提供全功能自动售图脚本",
-		Games = {4490140733},
-		Premium = false,
-		Loadstring = "http://void-scripts.com/Scripts/myRest.lua",
-	},
-	StopItSlender = {
-		Name = "Stop It Slender!",
-		Description = "此脚本是一个社区提交的脚本，xgo没有信息",
-		Games = {30869879},
-		Premium = false,
-		Loadstring = "https://pastebin.com/raw/hFxynXvs",
-	},
-	inooarctic = {
-		Name = "Remote Control Panel",
-		Description = "用核心的冷却元素弄乱",
-		Games = {1033860623},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/choke-dev/RE-Script/main/Innovation%20Inc%20Games/IAB%20FluxUI.lua?token=ALLESGRKZAOXBNLRWXVQORTBIXH3A",
-	},
-	StrollerAbuse = {
-		Name = "Stroller UI",
-		Description = "杀死并使用婴儿车工具的缺陷带来球员",
-		Games = {1662219031},
-		Premium = false,
-		Loadstring = "https://pastebin.com/raw/Q4qQh4MS",
+		Loadstring = "https://raw.githubusercontent.com/xgomn/pamn/refs/heads/main/%E6%B8%B8%E6%88%8F%E6%95%B4%E5%90%88%E5%99%A8",
 	},
 }
 
@@ -3861,7 +3675,7 @@ function ContinueBoot()
 		Toast("成功升级许可证","GoThamBlack")
 	end
 
-	Toast("谢谢使用xgo Hub"..Release.. ", "..LocalPlayer.DisplayName,"GothamBold")
+	Toast("谢谢使用xgo Hub "..Release.. ", "..LocalPlayer.DisplayName,"GothamBold")
 
 	--if protected then
 	--	if Client ~= "Universal" then
