@@ -371,9 +371,9 @@ function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 		local notificationContainer = Domain.Notifications
 		local Notification = notificationContainer:FindFirstChild('Template') or nil
 		if Notification == nil then
-			warn("\n无法通知，查找模板错误")
-			warn("\n参数: \n标题 - "..Title.."\n内容 - "..Content.."\n照片 - "..tostring(Image))
-			return
+			warn("\nUnable to notify, error finding template")
+			warn("\nArguments: \nTitle - "..Title.."\nContent - "..Content.."\nImage - "..tostring(Image))	
+		return
 		end
 		local notifClone = Notification:Clone()
 		local notifTitle = notifClone:WaitForChild('Title')
