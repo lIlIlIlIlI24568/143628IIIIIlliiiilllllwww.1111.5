@@ -562,7 +562,7 @@ function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 		if Content then
 			notifContent.Text = Content
 		else
-			notifContent.Text = "No more details"
+			notifContent.Text = "没有更多细节"
 		end
 
 		notifClone.Parent = notificationContainer
@@ -1890,7 +1890,7 @@ function PromptPremium()
 		local tween = TweenService:Create(Domain.Premium.Purchase, transitionInfo, {Position = UDim2.new(0.856,0,0.862,0)})
 		tween:Play()
 		wait(0.1)
-		Domain.Premium.Purchase.Text = "Working.."
+		Domain.Premium.Purchase.Text = "工作的.."
 		local HttpService = game:GetService("HttpService")
 		local RequestEnabled = (syn and syn.request) or (http and http.request) or http_request
 		if RequestEnabled then
@@ -1908,7 +1908,7 @@ function PromptPremium()
 				})
 			})
 		end
-		Domain.Premium.Purchase.Text = "Joined!"
+		Domain.Premium.Purchase.Text = "加入!"
 		wait(0.5)
 		for _, obj in ipairs(Domain.Premium:GetDescendants()) do
 			if obj.ClassName == "Frame" or obj.ClassName == "TextButton" then
@@ -1936,7 +1936,7 @@ function PromptPremium()
 		local tween = TweenService:Create(Domain.Premium, transitionInfo, {BackgroundTransparency = 1})
 		tween:Play()
 		wait(0.51)
-		Domain.Premium.Purchase.Text = "Purchase"
+		Domain.Premium.Purchase.Text = "购买"
 		Domain.Premium.Visible = false
 	end)
 end
@@ -4299,20 +4299,20 @@ Domain.Player.Fly.Interact.MouseButton1Click:Connect(function()
 			local tween = TweenService:Create(Domain.Player.Fly, transitionInfo, {BackgroundColor3 = Color3.fromRGB(62, 62, 62)})
 			tween:Play()
 		end
-		Domain.Player.Fly.Popup.Title.Text = "Fly"
+		Domain.Player.Fly.Popup.Title.Text = "飞行"
 		Domain.Player.Fly.Interact.Image = "rbxassetid://3926305904"
 		Domain.Player.Fly.Interact.ImageRectOffset = Vector2.new(124,364)
-		Toast("Disabled flight")
+		Toast("残疾人航班")
 		Unfly()
 	else 
 		local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 		local tween = TweenService:Create(Domain.Player.Fly, transitionInfo, {BackgroundColor3 = Color3.fromRGB(0, 132, 70)})
 		tween:Play()
 
-		Domain.Player.Fly.Popup.Title.Text = "Unfly"
+		Domain.Player.Fly.Popup.Title.Text = "联合国飞"
 		Domain.Player.Fly.Interact.Image = "rbxassetid://3926307971"
 		Domain.Player.Fly.Interact.ImageRectOffset = Vector2.new(884,324)
-		Toast("Enabled flight")
+		Toast("启用飞行")
 		Fly()
 	end
 end)
@@ -4321,7 +4321,7 @@ function PlaySound()
 	if Domain:FindFirstChildWhichIsA("Sound") then
 		Domain:FindFirstChildWhichIsA("Sound"):Destroy()
 	end
-	Domain.Home.Music.PlayingTitle.Text = "Now Playing"
+	Domain.Home.Music.PlayingTitle.Text = "现在玩"
 	MusicPlaying = true
 	local MusicSound = Instance.new("Sound",Domain)
 	MusicSound.Volume = 1
@@ -4334,10 +4334,10 @@ function PlaySound()
 	if CurrentMusicInfo then
 		Domain.Home.Music.Playing.Text = CurrentMusicInfo.Name
 	else
-		Domain.Home.Music.Playing.Text = "Unknown"
+		Domain.Home.Music.Playing.Text = "未知"
 	end
 	Domain.Home.Music.Toggle.ImageRectOffset = Vector2.new(804,124)
-	Toast("使用Shlexound演奏音乐")
+	Toast("xgo加载中 演奏音乐")
 end
 
 Domain.Home.Music.Toggle.MouseButton1Click:Connect(function()
@@ -4480,7 +4480,7 @@ function WalkupdateSlider()
 	local inverse_interpolation = (posX - Walkpadding.Start) / (Walkpadding.End - Walkpadding.Start)
 	TweenService:Create(Walkbar, TweenInfo.new(.7,Enum.EasingStyle.Quint),  {Size = UDim2.new(inverse_interpolation, 0, 1, 0)}):Play()
 	local value = math.floor(Walklimit[1] + (Walklimit[2] - Walklimit[1]) * inverse_interpolation + .5)
-	Walklabel.Text = value.." walkspeed"
+	Walklabel.Text = value.." 步行速度"
 	LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = value
 end
 
@@ -4512,7 +4512,7 @@ function JumpupdateSlider()
 	local inverse_interpolation = (posX - Jumppadding.Start) / (Jumppadding.End - Jumppadding.Start)
 	TweenService:Create(Jumpbar, TweenInfo.new(.7,Enum.EasingStyle.Quint),  {Size = UDim2.new(inverse_interpolation, 0, 1, 0)}):Play()
 	local value = math.floor(Jumplimit[1] + (Jumplimit[2] - Jumplimit[1]) * inverse_interpolation + .5)
-	Jumplabel.Text = value.." jumppower"
+	Jumplabel.Text = value.." 跳跃力量"
 	LocalPlayer.Character:WaitForChild("Humanoid").JumpPower = value
 
 end
@@ -4545,7 +4545,7 @@ function flyupdateSlider()
 	local inverse_interpolation = (posX - flypadding.Start) / (flypadding.End - flypadding.Start)
 	TweenService:Create(flybar, TweenInfo.new(.7,Enum.EasingStyle.Quint),  {Size = UDim2.new(inverse_interpolation, 0, 1, 0)}):Play()
 	local value = math.floor(flylimit[1] + (flylimit[2] - flylimit[1]) * inverse_interpolation + .5)
-	flylabel.Text = value.." flyspeed"
+	flylabel.Text = value.." 飞速"
 	PlayerFlySpeed = value
 end
 
@@ -4597,7 +4597,7 @@ Domain.JoinCodes.CodeBox.JCText.FocusLost:Connect(function()
 		local serverId = decoded["ServerId"]
 		for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. placeId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
 			if v.id == serverId then
-				Domain.JoinCodes.PlrOnlineText.Text = v.playing.. " players in server"
+				Domain.JoinCodes.PlrOnlineText.Text = v.playing.. " 服务器中的玩家"
 			end
 		end	
 	else
@@ -4615,7 +4615,7 @@ Domain.JoinCodes.CodeBox.SendJC.MouseButton1Click:Connect(function()
 
 		local placeId = decoded["Game"]
 		local serverId = decoded["ServerId"]
-		Toast("Teleporting..")
+		Toast("瞬移..")
 		game:GetService("TeleportService"):TeleportToPlaceInstance(placeId, serverId)
 	end	
 end)
@@ -4802,8 +4802,8 @@ LocalPlayer.CharacterAdded:Connect(function(Character)
 	local transitionInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quint)
 	local tween = TweenService:Create(Jumpbar, transitionInfo, {Size = UDim2.new(0,0,1,0)})
 	tween:Play()
-	Jumplabel.Text = "50 jumppower"
-	Walklabel.Text = "16 walkspeed"
+	Jumplabel.Text = "50 跳跃力量"
+	Walklabel.Text = "16 步行速度"
 end)
 
 function BoostFrames()
@@ -4862,17 +4862,17 @@ end)
 function CheckTime()
 
 	if tonumber(GetDate():format("#h")) > 12 then
-		Domain.Home.Welcome.Text = "Evening, "..LocalPlayer.DisplayName
+		Domain.Home.Welcome.Text = "晚上, "..LocalPlayer.DisplayName
 	else
-		Domain.Home.Welcome.Text = "Morning, "..LocalPlayer.DisplayName
+		Domain.Home.Welcome.Text = "早晨, "..LocalPlayer.DisplayName
 	end
 	if tonumber(GetDate():format("#h")) == 0 then
-		Domain.Home.WelcomeSub.Text = "Remember to smile!"
+		Domain.Home.WelcomeSub.Text = "记住要微笑!"
 	elseif tonumber(GetDate():format("#h")) >= 1 then
-		Domain.Home.WelcomeSub.Text = "Up bright and early!"
+		Domain.Home.WelcomeSub.Text = "明亮和早期!"
 	end
 	if tonumber(GetDate():format("#h")) > 19 then
-		Domain.Home.WelcomeSub.Text = "It's getting late.."
+		Domain.Home.WelcomeSub.Text = "它迟到了.."
 	end
 end
 
@@ -4885,13 +4885,13 @@ coroutine.wrap(function()
 		CheckTime()
 		local function updstuff()
 			timesince = timesince + 4
-			Domain.Home.Data.data.Executor.Text = "Executor: <b>"..Client.."</b>"
-			Domain.Home.Data.data.Version.Text = "Version: <b>v"..Release.."</b>"
-			Domain.Home.Data.data.Time.Text = "Time Since Boot: <b>"..tostring(timesince).."s</b>"
+			Domain.Home.Data.data.Executor.Text = "遗嘱执行人: <b>"..Client.."</b>"
+			Domain.Home.Data.data.Version.Text = "版本: <b>v"..Release.."</b>"
+			Domain.Home.Data.data.Time.Text = "自开机以来的时间: <b>"..tostring(timesince).."s</b>"
 			if not CheckWritefile() then
-				Domain.Home.Data.data.File.Text = "Data File: <b>Disabled</b>"
+				Domain.Home.Data.data.File.Text = "数据文件: <b>残</b>"
 			else
-				Domain.Home.Data.data.File.Text = "Data File: <b>Loaded</b>"
+				Domain.Home.Data.data.File.Text = "数据文件: <b>加载</b>"
 			end	
 
 
@@ -4927,10 +4927,10 @@ coroutine.wrap(function()
 				FriendsInGame = FriendsInGame + 1
 			end
 		end
-		Domain.Home.Friends.All.FriendsAll.Text = tostring(FriendsInTotal).." users"
-		Domain.Home.Friends.Offline.FriendsOffline.Text = tostring(FriendsInTotal - OnlineFriends).." users"
-		Domain.Home.Friends.Online.FriendsOnline.Text = tostring(OnlineFriends).." users"
-		Domain.Home.Friends.InServer.FriendsInGame.Text = tostring(FriendsInGame).." users"
+		Domain.Home.Friends.All.FriendsAll.Text = tostring(FriendsInTotal).." 用户"
+		Domain.Home.Friends.Offline.FriendsOffline.Text = tostring(FriendsInTotal - OnlineFriends).." 用户"
+		Domain.Home.Friends.Online.FriendsOnline.Text = tostring(OnlineFriends).." 用户"
+		Domain.Home.Friends.InServer.FriendsInGame.Text = tostring(FriendsInGame).." 用户"
 	end
 	pcall(CheckFriends)
 end)()
