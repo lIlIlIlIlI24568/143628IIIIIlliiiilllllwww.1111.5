@@ -162,7 +162,7 @@ if writefile and isfile and readfile and delfile then
 			end
 		end
 	else
-		-- No file, default it 
+		-- 没有文件，默认为它
 		Keybind = DefaultKeybind
 	end
 else
@@ -209,7 +209,7 @@ local coreguis = {"PlayerList","Chat","EmotesMenu","Health","Backpack"}
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
 
--- Tables
+-- 游戏列表
 
 local UniversalScripts = {
     xgo = {
@@ -284,13 +284,6 @@ local DetectionScripts = {
 		Games = {6872265039},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua",
-	},
-	Sirius = {
-		Name = "Sirius Loader",
-		Description = "最好的脚本集线器可用",
-		Games = {286090429,3233893879,292439477},
-		Premium = false,
-		Loadstring = "https://raw.githubusercontent.com/shlexware/Sirius/request/Loader",
 	},
 	Vision = {
 		Name = "Vision",
@@ -545,7 +538,7 @@ end
 
 function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 	spawn(function()
-		-- Set Up
+		-- 设定
 		if not NotificationsEnabled then
 			return
 		end
@@ -585,20 +578,20 @@ function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 		notifClone.Parent = notificationContainer
 		notifClone.Position = UDim2.new(-1,0,0,0)
 		wait(0.5)
-		-- Sound
+		-- 声音
 		local sound = Instance.new("Sound")
 		sound.Parent = Domain
 		sound.SoundId = "rbxassetid://"..255881176
-		sound.Name = "notify"
+		sound.Name = "通知"
 		sound.Volume = 2
 		sound.PlayOnRemove = true
 		sound:Destroy()
-		-- Animate
+		-- 动画
 		notifClone:TweenPosition(UDim2.new(0,0,0,0),'Out','Quint',0.5,true)
 
 		table.insert(NotificationStack,notifClone)
 		figureNotifs(NotificationStack,notificationContainer)
-		-- Wait
+		-- 等待
 		wait(0.3)
 		if Rotation then
 			local transitionInfo = TweenInfo.new(0.8, Enum.EasingStyle.Quint)
@@ -621,7 +614,7 @@ function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 			wait(NotificationDuration)
 		end
 
-		-- Close
+		-- 关
 		for a,b in pairs(NotificationStack) do
 			if b == notifClone then
 				table.remove(NotificationStack,a)
@@ -676,7 +669,7 @@ function AttachToPlayer(Player)
 	if HasTools() then
 		local Character = LocalPlayer.Character
 		local PlCharacter = Player.Character
-		local Humanoid = LocalPlayer.Character:FindFirstChildOfClass("Humanoid") -- Can sometimes fail, causing kill to error, working on fix
+		local Humanoid = LocalPlayer.Character:FindFirstChildOfClass("Humanoid") -- 有时会失败，导致杀死错误，解决修复
 		local HumanoidRootPart = FindRootPart(LocalPlayer.Character)
 		local PlHumanoidRootPart = FindRootPart(Player.Character)
 		Humanoid.Name = "1"
@@ -719,7 +712,7 @@ function Kill(Player)
 			wait(1)
 			LocalPlayer.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = RegularPosition
 		else
-			Toast("我们无法找到播放器实例")
+			Toast("xgo无法找到播放器实例")
 		end
 	else
 		Toast("您需要一个工具来执行杀死 "..Player.Name) 
@@ -743,7 +736,7 @@ function PreviousElegance(check)
 	local tween = TweenService:Create(Domain.Main.Time, transitionInfo, {TextTransparency = 0})
 	tween:Play()
 	for _, obj in ipairs(Domain.Main.Buttons:GetChildren()) do
-		if obj.ClassName == "Frame" then
+		if obj.ClassName == "帧" then
 			local transitionInfo = TweenInfo.new(0.7, Enum.EasingStyle.Quint)
 			local tween = TweenService:Create(obj, transitionInfo, {BackgroundTransparency = 0})
 			tween:Play()
@@ -783,7 +776,7 @@ function elegance(check)
 	local tween = TweenService:Create(Domain.Main.Time, transitionInfo, {TextTransparency = 0.5})
 	tween:Play()
 	for _, obj in ipairs(Domain.Main.Buttons:GetChildren()) do
-		if obj.ClassName == "Frame" then
+		if obj.ClassName == "帧" then
 			local transitionInfo = TweenInfo.new(1, Enum.EasingStyle.Quint)
 			local tween = TweenService:Create(obj, transitionInfo, {BackgroundTransparency = 1})
 			tween:Play()
@@ -835,7 +828,7 @@ end)
 
 function Respawn()
 
-	Notify("重生","我们正在重申你的角色，这可能需要片刻",4335476290,true)
+	Notify("重生","xgo正在重申你的角色，这可能需要片刻",4335476290,true)
 	local Character = LocalPlayer.Character
 	if Character:FindFirstChildOfClass("Humanoid") then 
 		Character:FindFirstChildOfClass("Humanoid"):ChangeState(15) 
@@ -1063,7 +1056,7 @@ function AddPlayer(Player)
 	if Player.Name ~= "shlexius" and Player.name ~= "fvllex" then
 		NewPlr.PremiumBar.Visible = false
 	else 
-		NewPlr.PremiumBar.Text.Text = "Developer"
+		NewPlr.PremiumBar.Text.Text = "开发人员"
 		NewPlr.PremiumBar.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
 	end
 	if NewPlr:FindFirstChild("Avatar") then
@@ -1081,7 +1074,7 @@ function AddPlayer(Player)
 	NewPlr.ESP.ImageTransparency = 0.5
 	NewPlr.SName.Text = Player.Name
 	if Player.OsPlatform == "DomainX" then
-		NewPlr.SName.Text = Player.Name.." - Using DomainX"
+		NewPlr.SName.Text = Player.Name.." - 使用domainx"
 	end
 
 	NewPlr.Kill.MouseButton1Click:Connect(function()
@@ -1894,7 +1887,7 @@ function PromptPremium()
 		local tween = TweenService:Create(Domain.Premium, transitionInfo, {BackgroundTransparency = 1})
 		tween:Play()
 		wait(0.51)
-		Domain.Premium.Purchase.Text = "Purchase"
+		Domain.Premium.Purchase.Text = "购买"
 		Domain.Premium.Visible = false
 	end)
 
@@ -2124,7 +2117,7 @@ function OpenHome()
 		local transitionInfo = TweenInfo.new(1.1, Enum.EasingStyle.Quint)
 		local tween = TweenService:Create(workspace.CurrentCamera, transitionInfo, {FieldOfView = 40})
 		tween:Play()
-		-- PLAYERGUI
+		-- 球员GUI
 		for _, gui in ipairs(LocalPlayer:FindFirstChildWhichIsA("PlayerGui"):GetChildren()) do
 			if gui:IsA("ScreenGui") then
 				if gui.Enabled then
@@ -2135,7 +2128,7 @@ function OpenHome()
 				end
 			end
 		end
-		-- AUDIO
+		-- 音频
 		for _, audio in ipairs(workspace:GetChildren()) do
 			if audio.ClassName == "Sound" then
 				local EQ = Instance.new("EqualizerSoundEffect")
@@ -2152,7 +2145,7 @@ function OpenHome()
 				tween:Play()
 			end
 		end
-		-- CoreGUI
+		-- 核心GUI
 		table.clear(cachedcoreguis)
 		for _, coregui in pairs(coreguis) do
 			if game:GetService("StarterGui"):GetCoreGuiEnabled(coregui) then
@@ -2165,12 +2158,12 @@ function OpenHome()
 		local transitionInfo = TweenInfo.new(0.8, Enum.EasingStyle.Quint)
 		local tween = TweenService:Create(Domain.Home.Wallpaper, transitionInfo, {ImageTransparency = 0})
 		tween:Play()
-		-- NOTIFICATION
+		-- 通知
 		local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 		local tween = TweenService:Create(Domain.Notifications, transitionInfo, {Position = UDim2.new(0.815, 0, 0.08, 0)})
 		tween:Play()
 
-		-- Discord
+		-- 不和谐
 		Domain.Home.Discord.BackgroundTransparency = 1
 		Domain.Home.Discord.Title.TextTransparency = 1
 		Domain.Home.Discord.Info.TextTransparency = 1
