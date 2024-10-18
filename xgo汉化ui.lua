@@ -3689,13 +3689,13 @@ function ContinueBoot()
 
 	Toast("谢谢使用xgo Hub 版本:"..Release.. ", "..LocalPlayer.DisplayName,"GothamBold")
 
-	if protected then
-		if Client ~= "Universal" then
-			Toast(Client.." 从检测中保护了界面")
-		else
-			Toast("您的执行者已保护接口免于检测")
-		end
-	end
+	--if protected then
+	--	if Client ~= "Universal" then
+	--		Toast(Client.." 从检测中保护了界面")
+	--	else
+	--		Toast("您的执行者已保护接口免于检测")
+	--	end
+	--end    xgo 霍乱
 	if CheckWritefile() then
 		if isfile("DomainX Wallpaper.txt") then
 			if isfile(readfile("DomainX Wallpaper.txt")) then
