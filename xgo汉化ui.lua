@@ -371,14 +371,14 @@ function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 		local notificationContainer = Domain.Notifications
 		local Notification = notificationContainer:FindFirstChild('Template') or nil
 		if Notification == nil then
-			warn("\nUnable to notify, error finding template")
-			warn("\nArguments: \nTitle - "..Title.."\nContent - "..Content.."\nImage - "..tostring(Image))
+			warn("\n无法通知，查找模板错误")
+			warn("\n参数: \nTitle - "..Title.."\n内容 - "..Content.."\n照片 - "..tostring(Image))
 			return
 		end
 		local notifClone = Notification:Clone()
 		local notifTitle = notifClone:WaitForChild('Title')
 		local notifContent = notifClone:WaitForChild('Content')
-		notifClone.Name = 'Notification'
+		notifClone.Name = '通知'
 		notifClone.Visible = true
 		notifTitle.Text = Title
 		if Image then
@@ -1141,7 +1141,7 @@ function OpenPlayerConfig()
 			end
 		end
 		if o.ClassName == "ImageLabel" or o.ClassName == "ImageButton" then
-			if o.Name == "Shadow" then
+			if o.Name == "阴影" then
 				local transitionInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quint)
 				local tween = TweenService:Create(o, transitionInfo, {ImageTransparency = 0.8})
 				tween:Play()
@@ -2833,7 +2833,7 @@ function CloseHome()
 		local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 		local tween = TweenService:Create(Domain.Home.Data.data.File, transitionInfo, {TextTransparency = 1})
 		tween:Play()
-		-- User Animate
+		-- 用户动画
 		local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 		local tween = TweenService:Create(Domain.Home.User, transitionInfo, {BackgroundTransparency = 1})
 		tween:Play()
@@ -3798,18 +3798,18 @@ function CheckLatest()
 	if DebugMode then
 		warn("DomainX - 检查版本")
 	end
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/routine',true))()
-	local ver = game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/latest')
-	print(ver)
-	if tonumber(ver) > Release then
-		Connected = false
-		warn("Not up to date, needs to be on "..tostring(game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/latest')))
+	--loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/routine',true))()
+	--local ver = game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/latest')
+	--print(ver)
+	--if tonumber(ver) > Release then
+		--Connected = false
+		--warn("不迄今为止，需要继续 "..tostring(game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/latest')))
 		return false
 	else
-	Connected = true
+	--Connected = true
 	end
 end
---xgo3801 3809 3806 3805 3804 3803 3802
+--xgo3801 3809 3806 3805 3804 3803 3802 检查成功
 
 
 function BootDomainX()
@@ -4269,7 +4269,7 @@ game.Players.PlayerAdded:Connect(function(Player)
 	if Domain:FindFirstChild("Home") == false then
 		return
 	end
-	Domain.Home.Data.data.Players.Text = "Players: <b>"..tostring(#game.Players:GetChildren()).."/"..tostring(game.Players.MaxPlayers).."</b>"
+	Domain.Home.Data.data.Players.Text = "玩家: <b>"..tostring(#game.Players:GetChildren()).."/"..tostring(game.Players.MaxPlayers).."</b>"
 	if Player.Name == "GTAFAW" then
 		Toast("脚本作者xxxxgo 加入了您的服务器!!!!!")
 	end
@@ -4639,8 +4639,8 @@ LocalPlayer.CharacterAdded:Connect(function(Character)
 	local tween = TweenService:Create(Jumpbar, transitionInfo, {Size = UDim2.new(0,0,1,0)})
 	tween:Play()
 	Jumplabel.Text = "50 跳跃力量"
-	Walklabel.Text = "16 步行速度"
-    Flylabel.Text = "1 飞行速度"   --xgo 标记修改处
+	Walklabel.Text = "16 步行速度" 
+	flylabel.Text = "1 飞行速度"--xgo 标记修改处
 end)
 
 function BoostFrames()
