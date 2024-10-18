@@ -11,7 +11,7 @@ while not game:GetService("Players").LocalPlayer do
 end
 
 if DebugMode then
-	warn("DomainX - Starting")
+	warn("DomainX - 开始")
 end
 local UserHWID = nil
 ExecutorAutomatic = false
@@ -19,23 +19,23 @@ if not game:IsLoaded() then
 	wait(0.5)
 	if game:IsLoaded() then
 		if DebugMode then
-			warn("DomainX - AutoExec Detection false")
+			warn("DomainX - 自动执行检测错误")
 		end
 		return
 	else
 		ExecutorAutomatic = true
 		if DebugMode then
-			warn("DomainX - AutoExec Detection true")
+			warn("DomainX - 自动执行检测为true")
 		end
 	end
 end
 if DebugMode then
-	warn("DomainX - Game Loaded")
+	warn("DomainX - 游戏加载")
 end
 local KeySys = game:GetObjects("rbxassetid://8065404628")[1]
 
 if DebugMode then
-	warn("DomainX - Loaded KeyUI")
+	warn("DomainX - 加载密钥UI")
 end
 
 if not gethui then
@@ -65,7 +65,7 @@ for _, ui in ipairs(game:GetService("CoreGui"):GetChildren()) do
 end
 
 if DebugMode then
-	warn("DomainX - Protected KeyUI")
+	warn("DomainX - 受保护的关键UI")
 end
 
 local http_request = http_request;
@@ -88,7 +88,7 @@ end
 local Domain = game:GetObjects("rbxassetid://7924540022")[1]
 
 if DebugMode then
-	warn("DomainX - Loaded Main UI")
+	warn("DomainX - 加载主UI")
 end
 
 local protected = false
@@ -109,14 +109,14 @@ else
 end
 
 if DebugMode then
-	warn("DomainX - Protected Main UI")
+	warn("DomainX - 受保护的主UI")
 end
 
 Domain.Parent = parent
 Domain.Main.Visible = true
 Domain.Main.Position = UDim2.new(0.5, 0, 1.05, 0)
 Domain.Main.KeybindNote.Position = UDim2.new(0.5,0,-1.303,0)
-Domain.Main.KeybindNote.Text = "Starting"
+Domain.Main.KeybindNote.Text = "开始"
 Domain.Main.KeybindNote.Visible = true
 Domain.Main.KeybindNote.TextTransparency = 0.4
 wait(0.2)
@@ -127,7 +127,7 @@ local DiscordLink2 = "sirius"
 local NotificationDuration = 7
 local DomainEnabled = true
 local Price = "$7.99"
-local CustomFolderName = "DomainX Custom Scripts"
+local CustomFolderName = "DomainX 自定义脚本"
 local KeyWaitTime = 60
 
 local MlemixMode = false
@@ -705,7 +705,7 @@ function Kill(Player)
 			Toast("我们无法找到播放器实例")
 		end
 	else
-		Toast("您需要一个工具来执行终止 "..Player.Name) 
+		Toast("您需要一个工具来执行杀死 "..Player.Name) 
 	end
 end
 
@@ -2622,7 +2622,7 @@ function Execute(String)
 	if loadstring then
 		loadstring(game:HttpGet(String, true))()
 	else
-		Toast("Missing loadstring function")
+		Toast("缺少加载函数")
 	end
 end
 
@@ -2632,14 +2632,14 @@ function PromptDetection(Script)
 			return
 		else
 			Domain.Detection.Banner.Visible = true
-			Domain.Detection.Banner.Title.Text = "Premium Script"
+			Domain.Detection.Banner.Title.Text = "优质脚本"
 		end
 	else
 		Domain.Detection.Banner.Visible = false
 	end
 	if CustomScriptEnabled then
 		Domain.Detection.Banner.Visible = true
-		Domain.Detection.Banner.Title.Text = "Custom Script"
+		Domain.Detection.Banner.Title.Text = "自定义脚本"
 	end
 	Domain.Detection.Banner.BackgroundTransparency = 1
 	Domain.Detection.Banner.Title.TextTransparency = 1
@@ -3327,7 +3327,7 @@ function Serverhop()
 		elseif Amount > 0 then
 			-- Found more than 0 servers, let them know, then wait, then teleport
 			if not ServerhopCancelled then
-				Domain.Serverhop.ProgressInfo.Text = "Found server"
+				Domain.Serverhop.ProgressInfo.Text = "找到服务器"
 				local transitionInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quint)
 				local tween = TweenService:Create(Domain.Serverhop.ServerhopLoading.Progress, transitionInfo, {Size = UDim2.new(0.8,0,1,0)})
 				tween:Play()
@@ -3362,7 +3362,7 @@ function Serverhop()
 					serverhopdb = false
 				end
 			else
-				Domain.Serverhop.ProgressInfo.Text = "Server lost"
+				Domain.Serverhop.ProgressInfo.Text = "服务器丢失了"
 				CloseServerhopMenu()
 				if ThemeEnabled then
 					local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
@@ -3380,7 +3380,7 @@ function Serverhop()
 end
 
 Domain.Serverhop.Stop.MouseButton1Click:Connect(function()
-	Domain.Serverhop.ProgressInfo.Text = "Cancelled"
+	Domain.Serverhop.ProgressInfo.Text = "取消"
 	if ThemeEnabled then
 		local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 		local tween = TweenService:Create(Domain.Player.Serverhop, transitionInfo, {BackgroundColor3 = Theme.SecondaryColor})
@@ -3475,7 +3475,7 @@ function CheckWritefile()
 	if isfile and delfile and writefile and readfile then
 		return true
 	end
-	warn("Warning - writefile is not supported")
+	warn("警告 - 不支持写入文件")
 	return false
 end
 
@@ -3560,9 +3560,9 @@ end
 
 function LoadThemes()
 	if DebugMode then
-		warn("DomainX - Loading Themes")
+		warn("DomainX  - 加载主题")
 	end
-	Toast("Loading "..Theme.Name.." theme to DomainX")
+	Toast("负载 "..Theme.Name.." theme to DomainX")
 	for _, obj in ipairs(Domain:GetDescendants()) do
 		if obj.ClassName == "TextButton" or obj.ClassName == "TextLabel" or obj.ClassName == "TextBox" then
 			if Theme.Font ~= "" then
@@ -3615,11 +3615,11 @@ end
 
 function VersionCheck()
 	if DebugMode then
-		warn("DomainX - Starting Version Check")
+		warn("DomainX - 启动版本检查")
 	end
 	if isfile("DomainX Version.txt") then
 		if DebugMode then
-			warn("DomainX - Version File Existent")
+			warn("DomainX - 版本文件存在")
 		end
 		if tostring(readfile("DomainX Version.txt")) ~= tostring(Release) then
 			Notify("更新已安装","domainx已更新为 "..ReleaseType.." "..Release,4400701828)
@@ -3629,13 +3629,13 @@ function VersionCheck()
 			end
 			writefile("DomainX Version.txt",tostring(Release))
 			if DebugMode then
-				warn("DomainX - New Version, writing over")
+				warn("DomainX - 新版本，写作")
 			end
 			local HttpService = game:GetService("HttpService")
 			local RequestEnabled = (syn and syn.request) or (http and http.request) or http_request
 			if RequestEnabled and not UserIsPremium then
 				if DebugMode then
-					warn("DomainX - Joining Discord")
+					warn("DomainX - 加入不和谐")
 				end
 				RequestEnabled({
 					Url = 'http://127.0.0.1:6463/rpc?v=1',
@@ -3654,23 +3654,23 @@ function VersionCheck()
 		end
 	else
 		if DebugMode then
-			warn("DomainX - No Version File")
+			warn("DomainX - 没有版本文件")
 		end
 		if not firsttime then
 			if DebugMode then
-				warn("DomainX - Not First Time, notifying")
+				warn("DomainX - 不是第一次，通知")
 			end
 			Notify("更新已安装","domainx已更新为 "..ReleaseType.." "..Release,4400701828)
 			local num = math.random(1,5)
 			if num == 2 then
 				PromptPremium()
 				if DebugMode then
-					warn("DomainX - Prompting Premium")
+					warn("DomainX - 提示溢价")
 				end
 			end
 		end
 		if DebugMode then
-			warn("DomainX - Could be first time, continuing")
+			warn("DomainX - 可能第一次，继续")
 		end
 		local HttpService = game:GetService("HttpService")
 		local RequestEnabled = (syn and syn.request) or (http and http.request) or http_request
@@ -3689,15 +3689,15 @@ function VersionCheck()
 				})
 			})
 			if DebugMode then
-				warn("DomainX - Joining Discord")
+				warn("DomainX - 加入不和谐")
 			end
 		end
 		if DebugMode then
-			warn("DomainX - Starting writefile")
+			warn("DomainX - 启动写入文件")
 		end
 		writefile("DomainX Version.txt",tostring(Release))
 		if DebugMode then
-			warn("DomainX - Writing new version file")
+			warn("DomainX - 编写新版本文件")
 		end
 	end
 end
@@ -3705,13 +3705,13 @@ end
 function ContinueBoot()
 	DMNReady = true
 	if DebugMode then
-		warn("DomainX - Continuing Boot Process (begun)")
+		warn("DomainX - 继续启动过程（开始）")
 	end
 	Domain.Premium.Robux.Text = "or 2899 Robux"
 	FirstCheck()
 	VersionCheck()
 	if DebugMode then
-		warn("DomainX - Checked Version success")
+		warn("DomainX - 检查版本的成功")
 	end
 
 	if getconnections then
@@ -3719,7 +3719,7 @@ function ContinueBoot()
 			v:Disable()
 		end
 		if DebugMode then
-			warn("DomainX - Disabled ScriptContext Errors")
+			warn("DomainX - 禁用脚本上下文错误")
 		end
 	end
 	for _, ob in ipairs(Domain:GetDescendants()) do
@@ -3728,26 +3728,26 @@ function ContinueBoot()
 		end
 	end
 	if DebugMode then
-		warn("DomainX - Increasing ZIndex")
+		warn("DomainX - 增加Zindex")
 	end
 	if UserIsPro and ThemeEnabled then
 		LoadThemes()
 	end
 	if DebugMode then
-		warn("DomainX - Loading Themes (if any)")
+		warn("DomainX - 装载主题（如果有的话）")
 	end
 	if ThemeEnabled and not UserIsPro then
-		Toast("You must be Pro to use Themes")
+		Toast("您必须使用主题")
 		PromptPremium()
 	end
 
 	StartPopUpFramework()
 	if DebugMode then
-		warn("DomainX - Starting pop up framework")
+		warn("DomainX - 启动弹出框架")
 	end
 	StartAntiKick()
 	StartAntiIdle()
-	Domain.Home.Data.data.Players.Text = "Players: <b>"..tostring(#game.Players:GetChildren()).."/"..tostring(game.Players.MaxPlayers).."</b>"
+	Domain.Home.Data.data.Players.Text = "玩家: <b>"..tostring(#game.Players:GetChildren()).."/"..tostring(game.Players.MaxPlayers).."</b>"
 	Domain.Main.Position = UDim2.new(0.5, 0, 1.15, 0)
 	Domain.Home.Discord.Info.RichText = true
 	Domain.Main.Time.Text = tostring(GetDate():format("#h:#m"))
@@ -3765,7 +3765,7 @@ function ContinueBoot()
 	Domain.Main.Visible = true
 
 	if DebugMode then
-		warn("DomainX - Started AntiKick and AntiIdle")
+		warn("DomainX - 开始反踢和反闲置")
 	end
 
 
@@ -3780,7 +3780,7 @@ function ContinueBoot()
 		end
 		Domain.Home.User.Avatar.Image = game:GetService("Players"):GetUserThumbnailAsync(LocalPlayer.UserId,Enum.ThumbnailType.HeadShot,Enum.ThumbnailSize.Size420x420)
 		if DebugMode then
-			warn("DomainX - Finished Player Data")
+			warn("DomainX - 完成了播放器数据")
 		end	
 	end
 	if not Connected then
@@ -3790,27 +3790,27 @@ function ContinueBoot()
 	end	
 	if not ExecutorAutomatic or firsttime then
 		if DebugMode then
-			warn("DomainX - First time or not autoexec")
+			warn("DomainX - 第一次或没有自动执行")
 		end
 		local sound = Instance.new("Sound")
 		sound.Parent = Domain
 		sound.SoundId = "rbxassetid://"..6958727243
 		sound.Name = "boot"
 		if DebugMode then
-			warn("DomainX - Instance Success!")
+			warn("DomainX - 实例成功!")
 		end
 		sound.Volume = 10
 		sound.PlayOnRemove = true
 		if DebugMode then
-			warn("DomainX - Waiting for sound load")
+			warn("DomainX - 等待声音负荷")
 		end
 		sound:Destroy()
 		if DebugMode then
-			warn("DomainX - Destroyed sound (loaded)")
+			warn("DomainX - 摧毁了声音（加载）")
 		end
 		wait(0.75)
 		if DebugMode then
-			warn("DomainX - Preparing effect")
+			warn("DomainX - 准备效果")
 		end
 		if workspace.CurrentCamera.FieldOfView <= 71 and workspace.CurrentCamera.FieldOfView >= 70  then
 			if DebugMode then
@@ -3827,22 +3827,22 @@ function ContinueBoot()
 		wait(0.6)
 		Domain.Main.KeybindNote.Visible = false
 		if DebugMode then
-			warn("DomainX - Keybind Note false")
+			warn("DomainX - 键绑定注意假")
 		end
 		if DebugMode then
-			warn("DomainX - Opening main")
+			warn("DomainX - 开放主要")
 		end
 		OpenMain()
 		if DebugMode then
-			warn("DomainX - Opened Main")
+			warn("DomainX - 打开主要")
 		end
 
 	else
 		if DebugMode then
-			warn("DomainX - Autoexec")
+			warn("DomainX - 自动执行")
 		end
 		wait(1)
-		Domain.Main.KeybindNote.Text = "tap "..Keybind.." to start"
+		Domain.Main.KeybindNote.Text = "请点按 "..Keybind.." 开始"
 		Domain.Main.Position = UDim2.new(0.5,0,1.05,0)
 		Domain.Main.KeybindNote.Visible = true
 		Domain.Main.Visible = true
@@ -3851,7 +3851,7 @@ function ContinueBoot()
 		Toast("成功升级许可证","GoThamBlack")
 	end
 
-	Toast("欢迎来到 DomainX v"..Release.. ", "..LocalPlayer.DisplayName,"GothamBold")
+	Toast("谢谢使用xgo Hub"..Release.. ", "..LocalPlayer.DisplayName,"GothamBold")
 
 	--if protected then
 	--	if Client ~= "Universal" then
@@ -4358,7 +4358,7 @@ Domain.Home.Music.Toggle.MouseButton1Click:Connect(function()
 			MusicPlaying = true
 			Domain.Home.Music.Toggle.ImageRectOffset = Vector2.new(804,124)
 			Domain:FindFirstChildWhichIsA("Sound"):Resume()
-			Toast("Resumed sound")
+			Toast("恢复声音")
 		end
 	end
 end)
@@ -4864,12 +4864,12 @@ function CheckTime()
 	if tonumber(GetDate():format("#h")) > 12 then
 		Domain.Home.Welcome.Text = "晚上, "..LocalPlayer.DisplayName
 	else
-		Domain.Home.Welcome.Text = "早晨, "..LocalPlayer.DisplayName
+		Domain.Home.Welcome.Text = "xgo 欢迎"..LocalPlayer.DisplayName
 	end
 	if tonumber(GetDate():format("#h")) == 0 then
 		Domain.Home.WelcomeSub.Text = "记住要微笑!"
 	elseif tonumber(GetDate():format("#h")) >= 1 then
-		Domain.Home.WelcomeSub.Text = "明亮和早期!"
+		Domain.Home.WelcomeSub.Text = "谢谢使用xgo脚本"
 	end
 	if tonumber(GetDate():format("#h")) > 19 then
 		Domain.Home.WelcomeSub.Text = "它迟到了.."
