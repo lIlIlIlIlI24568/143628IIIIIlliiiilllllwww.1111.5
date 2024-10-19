@@ -1830,7 +1830,7 @@ function PromptPremium()
 		local tween = TweenService:Create(Domain.Premium.Purchase, transitionInfo, {BackgroundTransparency = 0.4})
 		tween:Play()
 		wait(0.1)
-		Domain.Premium.Purchase.Text = "Join Discord"
+		Domain.Premium.Purchase.Text = "加入不和谐"
 	end)
 	Domain.Premium.Purchase.MouseLeave:Connect(function()
 		if cl then
@@ -1846,7 +1846,7 @@ function PromptPremium()
 		local tween = TweenService:Create(Domain.Premium.Purchase, transitionInfo, {BackgroundTransparency = 0})
 		tween:Play()
 		wait(0.1)
-		Domain.Premium.Purchase.Text = "Purchase"
+		Domain.Premium.Purchase.Text = "购买"
 	end)
 
 	Domain.Premium.Exit.MouseButton1Click:Connect(function()
@@ -1877,7 +1877,7 @@ function PromptPremium()
 		local tween = TweenService:Create(Domain.Premium, transitionInfo, {BackgroundTransparency = 1})
 		tween:Play()
 		wait(0.51)
-		Domain.Premium.Purchase.Text = "Purchase"
+		Domain.Premium.Purchase.Text = "购买"
 		Domain.Premium.Visible = false
 	end)
 
@@ -1890,7 +1890,7 @@ function PromptPremium()
 		local tween = TweenService:Create(Domain.Premium.Purchase, transitionInfo, {Position = UDim2.new(0.856,0,0.862,0)})
 		tween:Play()
 		wait(0.1)
-		Domain.Premium.Purchase.Text = "Working.."
+		Domain.Premium.Purchase.Text = "工作的.."
 		local HttpService = game:GetService("HttpService")
 		local RequestEnabled = (syn and syn.request) or (http and http.request) or http_request
 		if RequestEnabled then
@@ -1908,7 +1908,7 @@ function PromptPremium()
 				})
 			})
 		end
-		Domain.Premium.Purchase.Text = "Joined!"
+		Domain.Premium.Purchase.Text = "加入!"
 		wait(0.5)
 		for _, obj in ipairs(Domain.Premium:GetDescendants()) do
 			if obj.ClassName == "Frame" or obj.ClassName == "TextButton" then
@@ -1936,7 +1936,7 @@ function PromptPremium()
 		local tween = TweenService:Create(Domain.Premium, transitionInfo, {BackgroundTransparency = 1})
 		tween:Play()
 		wait(0.51)
-		Domain.Premium.Purchase.Text = "Purchase"
+		Domain.Premium.Purchase.Text = "购买"
 		Domain.Premium.Visible = false
 	end)
 end
@@ -3894,7 +3894,7 @@ function ContinueBoot()
 	end
 	if not ExecutorAutomatic and not firsttime then
 		wait(0.4)
-		Toast("Tap "..Keybind.." to hide the SmartBar","GothamSemibold")
+		Toast("xgo:请点按 "..Keybind.." 隐藏智能栏","来加载游戏")
 	end
 
 	if CheckWritefile() == true then
@@ -4321,7 +4321,7 @@ function PlaySound()
 	if Domain:FindFirstChildWhichIsA("Sound") then
 		Domain:FindFirstChildWhichIsA("Sound"):Destroy()
 	end
-	Domain.Home.Music.PlayingTitle.Text = "现在玩"
+	Domain.Home.Music.PlayingTitle.Text = "正在播放"
 	MusicPlaying = true
 	local MusicSound = Instance.new("Sound",Domain)
 	MusicSound.Volume = 1
@@ -4337,7 +4337,7 @@ function PlaySound()
 		Domain.Home.Music.Playing.Text = "未知"
 	end
 	Domain.Home.Music.Toggle.ImageRectOffset = Vector2.new(804,124)
-	Toast("xgo加载中 演奏音乐")
+	Toast("xgo加载中...音乐开始")
 end
 
 Domain.Home.Music.Toggle.MouseButton1Click:Connect(function()
@@ -4886,13 +4886,13 @@ coroutine.wrap(function()
 		CheckTime()
 		local function updstuff()
 			timesince = timesince + 4
-			Domain.Home.Data.data.Executor.Text = "遗嘱执行人: <b>"..Client.."</b>"
+			Domain.Home.Data.data.Executor.Text = "注入器: <b>"..Client.."</b>"
 			Domain.Home.Data.data.Version.Text = "版本: <b>v"..Release.."</b>"
 			Domain.Home.Data.data.Time.Text = "自开机以来的时间: <b>"..tostring(timesince).."s</b>"
 			if not CheckWritefile() then
 				Domain.Home.Data.data.File.Text = "数据文件: <b>残</b>"
 			else
-				Domain.Home.Data.data.File.Text = "数据文件: <b>加载</b>"
+				Domain.Home.Data.data.File.Text = "数据文件: <b>内容为空，没有函数 xgo </b>"
 			end	
 
        end
@@ -4927,10 +4927,10 @@ coroutine.wrap(function()
 				FriendsInGame = FriendsInGame + 1
 			end
 		end
-		Domain.Home.Friends.所有玩家.FriendsAll.Text = tostring(FriendsInTotal).." 用户"
-		Domain.Home.Friends.当前离线.FriendsOffline.Text = tostring(FriendsInTotal - OnlineFriends).." 用户"
-		Domain.Home.Friends.线上.FriendsOnline.Text = tostring(OnlineFriends).." 用户"
-		Domain.Home.Friends.在服务器中.FriendsInGame.Text = tostring(FriendsInGame).." 用户"
+		Domain.Home.Friends.All.FriendsAll.Text = tostring(FriendsInTotal).." 用户"
+		Domain.Home.Friends.Offline.FriendsOffline.Text = tostring(FriendsInTotal - OnlineFriends).." 用户"
+		Domain.Home.Friends.Online.FriendsOnline.Text = tostring(OnlineFriends).." 用户"
+		Domain.Home.Friends.InServer.FriendsInGame.Text = tostring(FriendsInGame).." 用户"
 	end
 	pcall(CheckFriends)
 end)()
