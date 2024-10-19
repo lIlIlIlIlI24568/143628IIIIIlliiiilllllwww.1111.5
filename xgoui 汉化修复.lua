@@ -4927,10 +4927,10 @@ coroutine.wrap(function()
 				FriendsInGame = FriendsInGame + 1
 			end
 		end
-		Domain.Home.Friends.All.FriendsAll.Text = tostring(FriendsInTotal).." 用户"
-		Domain.Home.Friends.Offline.FriendsOffline.Text = tostring(FriendsInTotal - OnlineFriends).." 用户"
-		Domain.Home.Friends.Online.FriendsOnline.Text = tostring(OnlineFriends).." 用户"
-		Domain.Home.Friends.InServer.FriendsInGame.Text = tostring(FriendsInGame).." 用户"
+		Domain.Home.Friends.所有玩家.FriendsAll.Text = tostring(FriendsInTotal).." 用户"
+		Domain.Home.Friends.当前离线.FriendsOffline.Text = tostring(FriendsInTotal - OnlineFriends).." 用户"
+		Domain.Home.Friends.线上.FriendsOnline.Text = tostring(OnlineFriends).." 用户"
+		Domain.Home.Friends.在服务器中.FriendsInGame.Text = tostring(FriendsInGame).." 用户"
 	end
 	pcall(CheckFriends)
 end)()
