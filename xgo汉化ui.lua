@@ -4788,3 +4788,449 @@ while true do
 	FpsLabel.Text = tostring(UpdatedFPS)
 	Domain.Main.Time.Text = tostring(GetDate():format("#h:#m"))
 end
+-- 不要分享这个。 执行将被记录，并且您的钥匙将获得黑名单！
+_G.key = "key not needed" -- 把你的钥匙放在引号内.“我的-关键这里”
+-- Killaura方法，方法2可能不那么滞后，但也没有那么有效！
+_G.usemethod2 = false
+
+-- 正确转移到肘节！
+_G.enabled = false
+_G.antiparry = false
+_G.stompaura = false
+_G.drawlines = false
+_G.range = 15
+_G.autohit = false
+_G.autospawn = false
+_G.followclosest = false
+_G.autoequip = false
+_G.autojump = false
+_G.boostws = false
+_G.killsay = false
+_G.usehitbox = 10
+_G.esp = false
+_G.usecustomaudio = true
+_G.tpOverHead = false -- 这仅适用于杀死法方法2 !!! 
+ --如果脚本落后于您，请尝试将其放到3或更高版本。 较低的值=更常见的杀戮地区击中但更多的滞后。
+_G.loopspeed = 2
+
+function addLine(myHrp, theirHrp)
+	if not theirHrp.Parent.Torso:FindFirstChild("Beam") then
+		if _G.drawlines == true then
+			local beam = Instance.new("Beam", theirHrp.Parent.Torso)
+			local att0 = Instance.new("Attachment", theirHrp.Parent.Torso)
+			local att1 = Instance.new("Attachment", myHrp)
+
+			beam.Attachment0 = att0
+			beam.Attachment1 = att1
+
+			beam.Width0 = 0.2
+			beam.Width1 = 0.2
+
+			beam.LightEmission = 1
+			beam.LightInfluence = 0
+
+			beam.FaceCamera = true
+
+			if theirHrp.Parent.Humanoid.Health <= 15 then
+				beam.Color = ColorSequence.new(Color3.fromRGB(255,0,0),Color3.fromRGB(255,0,0))
+			else if theirHrp.Parent.Humanoid.Health >= 16 and theirHrp.Parent.Humanoid.Health <= 50 then
+					beam.Color = ColorSequence.new(Color3.fromRGB(255, 170, 0),Color3.fromRGB(255, 170, 0))
+				else
+					beam.Color = ColorSequence.new(Color3.fromRGB(59, 255, 0),Color3.fromRGB(59, 255, 0))
+				end
+			end
+		end
+	end
+end
+
+-- shit ass esp cause im bad with drawing and math
+function addEsp()
+	for i,v in pairs(game.Workspace.PlayerCharacters:GetChildren()) do
+		if v.Name ~= game.Players.LocalPlayer.Name then
+			if not v.HumanoidRootPart:FindFirstChild("eyeesspee") then
+				local billboard = Instance.new("BillboardGui", v:WaitForChild("Head"))
+				billboard.LightInfluence = 0
+				billboard.Size = UDim2.new(40, 40, 1, 1)
+				billboard.StudsOffset = Vector3.new(0, 3, 0)
+				billboard.ZIndexBehavior = "Global"
+				billboard.ClipsDescendants = false
+				billboard.AlwaysOnTop = true
+				billboard.Name = "Head"
+
+				local billboard2 = Instance.new("BillboardGui", v:WaitForChild("HumanoidRootPart"))
+				billboard2.LightInfluence = 0
+				billboard2.Size = UDim2.new(3, 3, 5, 5)
+				billboard2.StudsOffset = Vector3.new(0, 0, 0)
+				billboard2.ZIndexBehavior = "Global"
+				billboard2.ClipsDescendants = false
+				billboard2.AlwaysOnTop = true
+				billboard2.Name = "eyeesspee"
+
+				local textBox = Instance.new("TextBox", billboard)
+				textBox.BackgroundTransparency = 1
+				textBox.ClearTextOnFocus = false
+				textBox.MultiLine = true
+				textBox.Size = UDim2.new(1, 1, 1, 1)
+				textBox.Font = "GothamBold"
+				textBox.Text = v.Name
+				textBox.TextScaled = true
+				textBox.TextYAlignment = "Top"
+				textBox.TextColor3 = Color3.fromRGB(255, 55, 55)
+
+				local textBox2 = Instance.new("TextBox", billboard2)
+				textBox2.BackgroundTransparency = 1
+				textBox2.ClearTextOnFocus = false
+				textBox2.MultiLine = true
+				textBox2.Size = UDim2.new(1, 1, 1, 1)
+				textBox2.Font = "GothamBold"
+				textBox2.Text = " "
+				textBox2.BackgroundTransparency = 0.85
+				textBox2.TextScaled = true
+				textBox2.TextYAlignment = "Top"
+				textBox2.BackgroundColor3 = Color3.fromRGB(126, 0, 0)
+			end
+		end
+	end
+end
+
+function removeEsp()
+	for i,v in pairs(game.Workspace.PlayerCharacters:GetChildren()) do
+		if v.Name ~= game.Players.LocalPlayer.Name then
+			if v.HumanoidRootPart:FindFirstChild("eyeesspee") then
+				v.HumanoidRootPart:FindFirstChild("eyeesspee"):Destroy()
+				v.Head.Head:Destroy()
+			end
+		end
+	end
+end
+
+function randomPlayer()
+	math.randomseed(os.time())
+	local RandomPlayer = game.Players:GetPlayers()[math.random(1,#game.Players:GetPlayers())]
+	return RandomPlayer.DisplayName
+end
+
+local tableOfShit = {"why am i writing these messages when i can continue making the script better?! 🤣🤣😂🤣😂🤣🤣","do you ever have problems with light users parrying your ds??? get warriorhook! it has a great anti parry that works! (sometimes..)","get warriorhook!!!","oh im sorry, did i killaura you? i can whitelist you if you want boo 🥺🥺🥺🥺","🤣🤣😂🤣🤣","hey ".. randomPlayer() ..", is your dad spiderman? cause he far from home.","EZ EZ EZ EZ EZ","are you even trying?? lulululul","damn bro you got the whole squad cringing","omg ".. randomPlayer() .. " im your biggest fan!!!","how are you that bad??🤣🤣😂🤣🤣","dont even bother insulting me 🤣🤣😂 im not even touching my keyboard!!","oh god... not ".. randomPlayer() .." again...","OMG!! IS THAT THE FAMOUS ".. randomPlayer() .. "???","vex really thinks this is gonna work...", "haha got you!!!", "who the hell is vex? oh the creator of this crap script?", "get reck't noobie", "warriorhook on top!!! (not really)", "project hook has some pretty cool features","Y1K is daddy 😋😋😋", "samuel you bozo your script is patched!!!","pls pls give vouch copy!!!", "😭 oh no! 😭😭 did i 😭😭 kill your mans?? 😭😭😭😭", "you: 😭😭 noooo i got murdered by a lvl ".. game.Players.LocalPlayer.leaderstats.Level.Value.."!!!", "oh my god im so sorry for killing you 😭😭😭😭😭😭😭", "oh 😭😭 did i hurt your 😭😭 feelings???", "get good with project hoo- i mean with warriorhook!!!", "samuel no one cares about criminality!!!😭😭", "who even wrote this crappy code??😭", "this script was brought to you by raid shadow legends!!", "do you like cheese?", "😭😭 imagine 😭😭 dying 😭😭", "get killaura'd!!!", "oh no 😭😭 did i kill your 😭😭 girl?? 😭😭😭"}
+
+local function RandomString(t)
+	return t[math.random(1, #t)]
+end
+
+game.Players.LocalPlayer.leaderstats.Score.Changed:connect(function()
+	if _G.killsay == true then
+		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(RandomString(tableOfShit),"All")
+	end
+end)
+
+function remLine(theirHrp)
+	if theirHrp.Parent.Torso:FindFirstChild("Beam") then
+		theirHrp.Parent.Torso:FindFirstChild("Beam"):Destroy()
+	end
+end
+
+function walkToClosest()
+	local closestCurrent = nil
+	local currentMagnitude = 999999
+
+	local myHrp = game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name]:FindFirstChild("HumanoidRootPart")
+
+	for i, v in pairs(game:GetService("Workspace").PlayerCharacters:GetChildren()) do
+		if v.Name ~= game.Players.LocalPlayer.Name then
+			if v.Humanoid.Health ~= 0 then
+				local theirHrp = v:FindFirstChild("HumanoidRootPart")
+				if (myHrp.Position - theirHrp.Position).Magnitude < currentMagnitude then
+					if theirHrp.Parent.Humanoid.Health ~= 0 then
+						currentMagnitude = (myHrp.Position - theirHrp.Position).Magnitude
+						closestCurrent = theirHrp
+					end
+				end
+			end
+		end
+	end
+
+	if _G.autojump == true then
+		keypress(0x20)
+	end
+	game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name]:FindFirstChild("Humanoid").WalkToPoint = closestCurrent.Position
+end
+
+function getClosestHrp()
+	local closestCurrent = nil
+	local currentMagnitude = 999999
+
+	local myHrp = game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name]:FindFirstChild("HumanoidRootPart")
+
+	for i, v in pairs(game:GetService("Workspace").PlayerCharacters:GetChildren()) do
+		if v.Name ~= game.Players.LocalPlayer.Name then
+			if v.Humanoid.Health ~= 0 then
+				local theirHrp = v:FindFirstChild("HumanoidRootPart")
+				if (myHrp.Position - theirHrp.Position).Magnitude < currentMagnitude then
+					if (myHrp.Position - theirHrp.Position).Magnitude <= _G.range and theirHrp.Parent.Humanoid.Health ~= 0 then
+						currentMagnitude = (myHrp.Position - theirHrp.Position).Magnitude
+						closestCurrent = theirHrp
+						addLine(myHrp, theirHrp)
+					else
+						remLine(theirHrp)
+					end
+				end
+			end
+		end
+	end
+
+	return closestCurrent
+end
+
+function setAttachmentWorldCFrame(attachment, cf)
+	attachment.CFrame = attachment.Parent.CFrame:toObjectSpace(cf)
+end
+
+local hittable = 0
+local walktocount = 0
+local espCount = 0
+local canLoop = 0
+local boostingws = false
+local canStomp = 0
+
+game:GetService("RunService").RenderStepped:connect(function()
+	if game.Players.LocalPlayer.PlayerGui.RoactUI:FindFirstChild("MainMenu") and _G.autospawn == true then
+		keypress(0x20)
+		keyrelease(0x20)
+	end
+
+	if _G.autoequip == true then
+		if not game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name]:FindFirstChildOfClass("Tool") and not game.Players.LocalPlayer.PlayerGui.RoactUI:FindFirstChild("MainMenu") then
+			keypress(0x31)
+			keyrelease(0x31)
+		end
+	end
+
+	if espCount == 60 then
+		if _G.esp == true then
+			addEsp()
+		else
+			removeEsp()
+		end
+
+		espCount = 0
+	end
+
+	espCount = espCount + 1
+	canLoop = canLoop + 1
+	canStomp = canStomp + 1
+
+	if walktocount == 10 then
+		if _G.followclosest == true then
+			walkToClosest()
+		end
+		if _G.boostws == true then
+			if boostingws == true then
+				boostingws = false
+				game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name]:FindFirstChild("HumanoidRootPart").Velocity = game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name]:FindFirstChild("HumanoidRootPart").CFrame.lookVector * (65) + Vector3.new(math.random(-40,40),0,math.random(-40,40))
+			else
+				boostingws = true
+			end
+		end
+		walktocount = 0
+	end
+
+	walktocount = walktocount + 1
+
+	if game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name]:FindFirstChildOfClass("Tool").Hitboxes:FindFirstChild("Hitbox2") then
+		game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name]:FindFirstChildOfClass("Tool").Hitboxes:FindFirstChild("Hitbox2"):Destroy()
+	end
+
+	local enabled = game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name]:FindFirstChildOfClass("Tool"):FindFirstChild("ClientEquipProgress")
+
+	local theirHrp = getClosestHrp()
+
+	if _G.usemethod2 == false then
+		if canLoop == _G.loopspeed or canLoop > _G.loopspeed then
+			canLoop = 0
+			for i,v in pairs(game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name]:FindFirstChildOfClass("Tool").Hitboxes.Hitbox:GetChildren()) do
+				if i <= _G.usehitbox then
+					if v.Name == "DmgPoint" then
+
+						if _G.antiparry == true then
+							if theirHrp.Parent.SemiTransparentShield.Transparency == 1 then
+								enabled.Value = 1
+								if _G.enabled == true then
+									setAttachmentWorldCFrame(v, CFrame.new(theirHrp.Position + Vector3.new(math.random(-1,1),math.random(-1,1),math.random(-1,1))))
+								end
+							else
+								setAttachmentWorldCFrame(v, CFrame.new(theirHrp.Position + Vector3.new(123,123,123)))
+								enabled.Value = 0
+							end
+						else
+							if _G.enabled == true then
+								setAttachmentWorldCFrame(v, CFrame.new(theirHrp.Position + Vector3.new(math.random(-1,1),math.random(-1,1),math.random(-1,1))))
+							end
+
+						end
+					end
+				else
+					setAttachmentWorldCFrame(v, CFrame.new(game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name]:FindFirstChild("Head").Position + Vector3.new(0, 10, 0)))
+				end
+			end
+		end
+
+
+		if _G.stompaura == true then
+			for i,s in pairs(game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name].Stomp.Hitboxes.RightLegHitbox:GetChildren()) do
+				if s.Name == "DmgPoint" then
+					s.Visible = true
+					if i <= _G.usehitbox then
+						if theirHrp.Parent.Humanoid.Health <= 15 then
+							setAttachmentWorldCFrame(s, CFrame.new(theirHrp.Position + Vector3.new(math.random(-1,1),math.random(-1,1),math.random(-1,1))))
+							if canStomp >= 30 then
+								keypress(0x51)
+								keyrelease(0x51)
+								canStomp = 0
+							end
+						end
+					end
+				end
+			end
+		end
+	else
+
+
+		local me = game:GetService("Workspace").PlayerCharacters:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
+		local hitbox = me:FindFirstChildOfClass("Tool").Hitboxes.Hitbox
+		local hitboxes = me:FindFirstChildOfClass("Tool").Hitboxes
+		local tool = me:FindFirstChildOfClass("Tool")
+		local enabled = tool:FindFirstChild("ClientEquipProgress")
+
+		if hitboxes:FindFirstChild("Hitbox2") then
+			hitboxes:FindFirstChild("Hitbox2"):Destroy()
+		end
+
+		if _G.killaura == true then
+			for i,v in pairs(game:GetService("Workspace").PlayerCharacters:GetChildren()) do
+				if v.Name ~= game.Players.LocalPlayer.Name then
+					if v:FindFirstChild("Right Arm") then
+						for i,s in pairs(v:FindFirstChild("Torso"):GetChildren()) do
+							if s.Name == "Right Shoulder" then
+								s:Destroy()
+							end
+						end
+						for i,s in pairs(v:FindFirstChild("Right Arm"):GetChildren()) do
+							s:Destroy()
+						end
+						if (me.HumanoidRootPart.Position - v:FindFirstChild("Torso").Position).Magnitude <= 20 then
+							if _G.tpOverHead == true then
+								me.HumanoidRootPart.Anchored = true
+								me.HumanoidRootPart.CFrame = CFrame.new(v:FindFirstChild("Head").Position + Vector3.new(0, 5, 0))
+							end
+
+							local vectorDec = math.random(9999)
+							local vectorWhole = 0
+							local vector = tostring(vectorWhole .. "." .. vectorDec)
+							local vectorComplete = tonumber(vector)
+
+							if v:FindFirstChild("SemiTransparentShield").Transparency == 1 then
+								v:FindFirstChild("Right Arm").CFrame = hitbox.CFrame + Vector3.new(0, vectorComplete, 0)
+								v:FindFirstChild("Right Arm").CanCollide = false
+								enabled.Value = 1
+							else
+								enabled.Value = 0
+							end
+						else
+							if _G.tpOverHead == true then
+								me.HumanoidRootPart.Anchored = false
+							end
+						end
+					end
+				end
+			end
+		end
+
+		if _G.stompaura == true then
+			for i,s in pairs(game.Workspace.PlayerCharacters[game.Players.LocalPlayer.Name].Stomp.Hitboxes.RightLegHitbox:GetChildren()) do
+				if s.Name == "DmgPoint" then
+					s.Visible = true
+					if i <= _G.usehitbox then
+						if theirHrp.Parent.Humanoid.Health <= 15 then
+							setAttachmentWorldCFrame(s, CFrame.new(theirHrp.Position + Vector3.new(math.random(-1,1),math.random(-1,1),math.random(-1,1))))
+							if canStomp >= 30 then
+								keypress(0x51)
+								keyrelease(0x51)
+								canStomp = 0
+							end
+						end
+					end
+				end
+			end
+		end
+
+	end
+end)
+
+if _G.usecustomaudio == true then
+	game:GetService("ReplicatedStorage").Shared.Assets.Sounds.HitmarkerSound.SoundId = "rbxassetid://5148302439"
+	game:GetService("ReplicatedStorage").Shared.Assets.Sounds.AirdropOpen.SoundId = "rbxassetid://904663967"
+	game:GetService("ReplicatedStorage").Shared.Assets.Sounds.UIClickSound.SoundId = "rbxassetid://2483029612"
+	game:GetService("ReplicatedStorage").Shared.Assets.Sounds.KillSound.SoundId = "rbxassetid://165013277"
+end
+Combat.Selectable = true
+Combat.Active = true
+Combat.Draggable = true
+
+Farming.Selectable = true
+Farming.Active = true
+Farming.Draggable = true
+
+Misc.Selectable = true
+Misc.Active = true
+Misc.Draggable = true
+
+Visual.Selectable = true
+Visual.Active = true
+Visual.Draggable = true
+
+local UserInputService = game:GetService("UserInputService")
+
+local function IsShiftKeyDown()
+	return UserInputService:IsKeyDown(Enum.KeyCode.RightShift)
+end
+
+local function IsCtrlKeyDown()
+	return UserInputService:IsKeyDown(Enum.KeyCode.RightControl)
+end
+
+local function IsAltKeyDown()
+	return UserInputService:IsKeyDown(Enum.KeyCode.RightAlt)
+end
+
+local function IsJKeyDown()
+	return UserInputService:IsKeyDown(Enum.KeyCode.J)
+end
+
+local function IsKKeyDown()
+	return UserInputService:IsKeyDown(Enum.KeyCode.K)
+end
+
+local function IsDelKeyDown()
+	return UserInputService:IsKeyDown(Enum.KeyCode.Delete)
+end
+
+local function IsPgdKeyDown()
+	return UserInputService:IsKeyDown(Enum.KeyCode.PageDown)
+end
+
+local function Input(input, gameProcessedEvent)
+	if IsShiftKeyDown() then
+		if Combat.Visible == true then
+			Combat.Visible = false
+			Farming.Visible = false
+			Misc.Visible = false
+			Visual.Visible = false
+		else
+			Combat.Visible = true
+			Farming.Visible = true
+			Misc.Visible = true
+			Visual.Visible = true
+		end
+	end
+end
+
+UserInputService.InputBegan:Connect(Input)
