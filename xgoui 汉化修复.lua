@@ -120,7 +120,7 @@ Domain.Main.KeybindNote.Visible = true
 Domain.Main.KeybindNote.TextTransparency = 0.4
 wait(0.2)
 
-local DefaultKeybind = "K"
+local DefaultKeybind = "xgo"
 local DiscordLink = " Q群:259461151"
 local DiscordLink2 = "sirius"
 local NotificationDuration = 7
@@ -245,35 +245,35 @@ local UniversalScripts = {
 local DetectionScripts = {
 	spongebobguess = {
 		Name = "Teleport to finish",
-		Description = "This script will teleport to the finish of the game. ha mlemix",
+		Description = "xgo留言:之后更新",
 		Games = {8494013385},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/dipyRqzR",
 	},
 	DecayingWinter = {
 		Name = "Decaying Winter",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {7551121821},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/Aidez/decaying_winter/main/GOODWILL_COMMAND_SCRIPT",
 	},
 	bedwars = {
 		Name = "Bedwars",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {6872265039},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua",
 	},
 	Sirius = {
 		Name = "Sirius Loader",
-		Description = "The best script hub available",
+		Description = "xgo留言:之后更新",
 		Games = {286090429,3233893879,292439477},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/shlexware/Sirius/request/Loader",
 	},
 	Vision = {
 		Name = "Vision",
-		Description = "A script hub with a few high quality games",
+		Description = "xgo留言:之后更新",
 		Games = {6769764667,6847090259,7305309231,8116417963},
 		Premium = false,
 		KeySys = true,
@@ -281,7 +281,7 @@ local DetectionScripts = {
 	},
 	DarkHub = {
 		Name = "Dark Hub",
-		Description = "One of the most popular script hubs to date, with little compromise.",
+		Description = "xgo留言:之后更新.",
 		Games = {2377868063,263761432,606849621,3527629287,2555870920,5081773298,2551991523,1962086868,3101667897,6483072762,6494529140,3297964905,5523314295,301549746,5041144419,370731277,142823291,621129760,6284583030,5104202731},
 		Premium = false,
 		KeySys = true,
@@ -289,126 +289,126 @@ local DetectionScripts = {
 	},
 	IdentityFraud = {
 		Name = "Identity Fraud",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {338521019},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/tkorra/Identity_Fraud/main/main.lua",
 	},
 	CriticalStrike = {
 		Name = "Critical Strike",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {111311599},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/WrF6UWQg",
 	},
 	DBR = {
 		Name = "Dragon Ball Rage",
-		Description = "A DomainX exclusive, by our developer, Urbanstorm",
+		Description = "xgo留言:之后更新",
 		Games = {71315343},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/Urbanstorms/DomainX/main/DBR.lua",
 	},
 	Vega = {
 		Name = "Vega Remover",
-		Description = "A powerful tool that removes known barriers in cafe games",
+		Description = "xgo留言:之后更新",
 		Games = {5580097107,738548299,610172644,1217895158,3522042406,679498303},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/realvega/VegaRemover/main/source",
 	},
 	KaijuParadise = {
 		Name = "Kaiju Paradise",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {6456351776},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/realoneofu/RealZzHub/main/Main.lua",
 	},
 	FNF = {
 		Name = "Friday Night Funkin'",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {6447798030},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",
 	},
 	PrisonLife = {
 		Name = "Prison Life",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {155615604},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife",
 	},
 	andestsim = {
 		Name = "Anime Destroyer Simulator",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {7082539621},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/DevPolarhub/ScriptPacks/main/Anime%20Destroyers%20Simulator",
 	},
 	towerdefensesim = {
 		Name = "Tower Defense Simulator",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {3260590327},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/Mjryt8Mm",
 	},
 	DemonSlayer = {
 		Name = "Demon Slayer RPG 2",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {4734949248},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/HDTerebi/DSRPG2/master/Shitty%20GUI.lua",
 	},
 	NDS = {
 		Name = "Natural Disaster Survival",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {189707},
 		Premium = false,
 		Loadstring = "https://gist.githubusercontent.com/TurkOyuncu99/7c75386107937fa006304efd24543ad4/raw/8d759dfcd95d39949c692735cfdf62baec0bf835/cafwetweg",
 	},
 	RoGhoul = {
 		Name = "Ro-Ghoul",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {914010731},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/z4gs/scripts/master/Ro-Ghoul%20Auto%20Farm.lua",
 	},
 	MegaEasyObby = {
 		Name = "Mega Easy Obby",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {3587619225},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/X361rzKq",
 	},
 	NinjaLegends = {
 		Name = "Ninja Legends",
-		Description = "Full featured autofarm script for Ninja Legends",
+		Description = "xgo留言:之后更新",
 		Games = {3956818381},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/Q39hYJ8V",
 	},
 	MyRestaurant = {
 		Name = "My Restaurant",
-		Description = "Full featured autofarm script for My Restaurant",
+		Description = "xgo留言:之后更新",
 		Games = {4490140733},
 		Premium = false,
 		Loadstring = "http://void-scripts.com/Scripts/myRest.lua",
 	},
 	StopItSlender = {
 		Name = "Stop It Slender!",
-		Description = "This script is a community submitted script, we have no info on it",
+		Description = "xgo留言:之后更新",
 		Games = {30869879},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/hFxynXvs",
 	},
 	inooarctic = {
 		Name = "Remote Control Panel",
-		Description = "Mess around with the cooling elements of the core",
+		Description = "xgo留言:之后更新",
 		Games = {1033860623},
 		Premium = false,
 		Loadstring = "https://raw.githubusercontent.com/choke-dev/RE-Script/main/Innovation%20Inc%20Games/IAB%20FluxUI.lua?token=ALLESGRKZAOXBNLRWXVQORTBIXH3A",
 	},
 	StrollerAbuse = {
 		Name = "Stroller UI",
-		Description = "Kill and bring players using the Stroller tool's flaws",
+		Description = "xgo留言:之后更新",
 		Games = {1662219031},
 		Premium = false,
 		Loadstring = "https://pastebin.com/raw/Q4qQh4MS",
@@ -2811,11 +2811,11 @@ function PromptDetection(Script)
 			tween:Play()
 			wait(0.81)
 			Domain.Detection.Visible = false
-			Toast("Starting "..Script.Name)
+			Toast("开始 "..Script.Name)
 
 			if Script.KeySys == true then
 				wait(1)
-				Notify(Script.Name.." [KEY SYSTEM]","You may be asked to go through a series of steps to use this script",3610239960)
+				Notify(Script.Name.." [键系统]","您可能会被要求通过一系列步骤来使用此脚本",3610239960)
 			end
 			Execute(Script.Loadstring)
 
@@ -3362,7 +3362,7 @@ function Serverhop()
 					serverhopdb = false
 				end
 			else
-				Domain.Serverhop.ProgressInfo.Text = "Server lost"
+				Domain.Serverhop.ProgressInfo.Text = "服务器丢失了"
 				CloseServerhopMenu()
 				if ThemeEnabled then
 					local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
@@ -3380,7 +3380,7 @@ function Serverhop()
 end
 
 Domain.Serverhop.Stop.MouseButton1Click:Connect(function()
-	Domain.Serverhop.ProgressInfo.Text = "Cancelled"
+	Domain.Serverhop.ProgressInfo.Text = "取消"
 	if ThemeEnabled then
 		local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 		local tween = TweenService:Create(Domain.Player.Serverhop, transitionInfo, {BackgroundColor3 = Theme.SecondaryColor})
@@ -3560,9 +3560,9 @@ end
 
 function LoadThemes()
 	if DebugMode then
-		warn("DomainX - Loading Themes")
+		warn("DomainX - 加载主题")
 	end
-	Toast("Loading "..Theme.Name.." theme to DomainX")
+	Toast("负载 "..Theme.Name.."主题  DomainX")
 	for _, obj in ipairs(Domain:GetDescendants()) do
 		if obj.ClassName == "TextButton" or obj.ClassName == "TextLabel" or obj.ClassName == "TextBox" then
 			if Theme.Font ~= "" then
@@ -4939,7 +4939,7 @@ end)()
 
 coroutine.wrap(function()
 	wait(1000)
-	Toast("享受domainx？ 让我们在我们的不和谐！")
+	Toast("关注xgo？ 谢谢使用xgo Hub！")
 	Toast(DiscordLink,"GothamBold")
 end)()
 
