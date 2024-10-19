@@ -539,7 +539,7 @@ function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 		local notifClone = Notification:Clone()
 		local notifTitle = notifClone:WaitForChild('Title')
 		local notifContent = notifClone:WaitForChild('Content')
-		notifClone.Name = 'Notification'
+		notifClone.Name = '通知'
 		notifClone.Visible = true
 		notifTitle.Text = Title
 		if Image then
@@ -559,26 +559,26 @@ function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 		if Content then
 			notifContent.Text = Content
 		else
-			notifContent.Text = "No more details"
+			notifContent.Text = "没有更多细节"
 		end
 
 		notifClone.Parent = notificationContainer
 		notifClone.Position = UDim2.new(-1,0,0,0)
 		wait(0.5)
-		-- Sound
+		-- 声音
 		local sound = Instance.new("Sound")
 		sound.Parent = Domain
 		sound.SoundId = "rbxassetid://"..255881176
-		sound.Name = "notify"
+		sound.Name = "通知"
 		sound.Volume = 2
 		sound.PlayOnRemove = true
 		sound:Destroy()
-		-- Animate
+		-- 动画
 		notifClone:TweenPosition(UDim2.new(0,0,0,0),'Out','Quint',0.5,true)
 
 		table.insert(NotificationStack,notifClone)
 		figureNotifs(NotificationStack,notificationContainer)
-		-- Wait
+		-- 等待
 		wait(0.3)
 		if Rotation then
 			local transitionInfo = TweenInfo.new(0.8, Enum.EasingStyle.Quint)
@@ -601,7 +601,7 @@ function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 			wait(NotificationDuration)
 		end
 
-		-- Close
+		-- 关
 		for a,b in pairs(NotificationStack) do
 			if b == notifClone then
 				table.remove(NotificationStack,a)
@@ -632,7 +632,7 @@ function Notify(Title,Content,Image,Rotation,ImageRectOffset)
 end
 
 function Refresh()
-	Notify("Hold on","We're refreshing your character, this can take a moment",4335476290,true)
+	Notify("坚持","我们正在刷新你的角色,这可能需要一点时间",4335476290,true)
 	local PreviousPosition = LocalPlayer.Character.HumanoidRootPart.CFrame
 	LocalPlayer.Character.Humanoid.Health = 0
 	if LocalPlayer.Character:FindFirstChild("Head") then LocalPlayer.Character.Head:Destroy() end
@@ -656,7 +656,7 @@ function AttachToPlayer(Player)
 	if HasTools() then
 		local Character = LocalPlayer.Character
 		local PlCharacter = Player.Character
-		local Humanoid = LocalPlayer.Character:FindFirstChildOfClass("Humanoid") -- Can sometimes fail, causing kill to error, working on fix
+		local Humanoid = LocalPlayer.Character:FindFirstChildOfClass("Humanoid") -- 有时会失败，导致杀死错误，解决修复
 		local HumanoidRootPart = FindRootPart(LocalPlayer.Character)
 		local PlHumanoidRootPart = FindRootPart(Player.Character)
 		Humanoid.Name = "1"
@@ -677,14 +677,14 @@ function AttachToPlayer(Player)
 			HumanoidRootPart.CFrame = PlHumanoidRootPart.CFrame
 		until (Tool.Parent ~= Character or not HumanoidRootPart or not PlHumanoidRootPart or not HumanoidRootPart.Parent or not PlHumanoidRootPart.Parent or n > 250) and n > 2
 	else
-		Toast("You need a tool to perform this action on "..Player.Name) 
+		Toast("您需要一个工具来执行此操作 "..Player.Name) 
 	end
 end
 
 function Kill(Player)
 	if HasTools() then
 		if Player and Player ~= nil then
-			Toast("Trying to kill "..Player.Name)
+			Toast("试图杀死 "..Player.Name)
 			local RegularPosition = FindRootPart(LocalPlayer.Character).CFrame
 			Refresh()
 			wait()
@@ -699,10 +699,10 @@ function Kill(Player)
 			wait(1)
 			LocalPlayer.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = RegularPosition
 		else
-			Toast("We are unable to find the Player instance")
+			Toast("xgo无法找到播放器实例")
 		end
 	else
-		Toast("You need a tool to perform kill on "..Player.Name) 
+		Toast("您需要一个工具来执行杀死 "..Player.Name) 
 	end
 end
 
@@ -718,6 +718,9 @@ function PreviousElegance(check)
 	Domain.DisplayOrder = 100
 	local transitionInfo = TweenInfo.new(1, Enum.EasingStyle.Back)
 	local tween = TweenService:Create(Domain.Main, transitionInfo, {Size = UDim2.new(0.295, 0,0.068, 0)})
+	tween:Play()
+	local transitionInfo = TweenInfo.new(0.7, Enum.EasingStyle.Quint)
+	local tween = TweenService:Create(Domain.Main.Time, transitionInfo, {TextTransparency = 0})
 	tween:Play()
 	local transitionInfo = TweenInfo.new(0.7, Enum.EasingStyle.Quint)
 	local tween = TweenService:Create(Domain.Main.Time, transitionInfo, {TextTransparency = 0})
@@ -815,7 +818,7 @@ end)
 
 function Respawn()
 
-	Notify("Respawn","We're respawning your character, this can take a moment",4335476290,true)
+	Notify("重生","xgo正在重申你的角色，这可能需要片刻",4335476290,true)
 	local Character = LocalPlayer.Character
 	if Character:FindFirstChildOfClass("Humanoid") then 
 		Character:FindFirstChildOfClass("Humanoid"):ChangeState(15) 
@@ -947,7 +950,7 @@ function NoClip()
 		end
 	end
 	Noclipping = game:GetService('RunService').Stepped:Connect(NoclipLoop)
-	Toast("Character NoClip enabled")
+	Toast("字符没有剪辑启用")
 end
 
 function ReClip()
@@ -955,11 +958,11 @@ function ReClip()
 		Noclipping:Disconnect()
 	end
 	Clip = true
-	Toast("Character NoClip disabled")
+	Toast("字符没有剪辑禁用")
 end
 
 function God()
-	Toast("God Mode enabled - Respawn to disable")
+	Toast("上帝模式启用 - 重生以禁用")
 	local Cam = workspace.CurrentCamera
 	local Pos, Char = Cam.CFrame, LocalPlayer.Character
 	local Human = Char and Char.FindFirstChildWhichIsA(Char, "Humanoid")
@@ -982,11 +985,11 @@ end
 
 function Teleport(Player)
 	if game.Players:FindFirstChild(Player.Name) then
-		Toast("Attempting to teleport you to "..Player.Name)
+		Toast("试图传送您 "..Player.Name)
 		local targetplayer = game.Workspace:FindFirstChild(Player.Name).HumanoidRootPart
 		LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(targetplayer.Position.X, targetplayer.Position.Y, targetplayer.Position.Z)
 	else
-		Toast(Player.Name.." has left the server")
+		Toast(Player.Name.." 已经离开了服务器")
 	end
 end
 
