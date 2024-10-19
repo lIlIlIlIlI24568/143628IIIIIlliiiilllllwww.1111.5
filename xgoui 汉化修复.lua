@@ -3615,27 +3615,27 @@ end
 
 function VersionCheck()
 	if DebugMode then
-		warn("DomainX - Starting Version Check")
+		warn("DomainX - 启动版本检查")
 	end
 	if isfile("DomainX Version.txt") then
 		if DebugMode then
-			warn("DomainX - Version File Existent")
+			warn("DomainX - 版本文件存在")
 		end
 		if tostring(readfile("DomainX Version.txt")) ~= tostring(Release) then
-			Notify("Update installed","DomainX was updated to "..ReleaseType.." "..Release,4400701828)
+			Notify("更新已安装","domainx已更新为 "..ReleaseType.." "..Release,4400701828)
 			local num = math.random(1,5)
 			if num == 2 then
 				PromptPremium()
 			end
 			writefile("DomainX Version.txt",tostring(Release))
 			if DebugMode then
-				warn("DomainX - New Version, writing over")
+				warn("DomainX - 新版本，写作")
 			end
 			local HttpService = game:GetService("HttpService")
 			local RequestEnabled = (syn and syn.request) or (http and http.request) or http_request
 			if RequestEnabled and not UserIsPremium then
 				if DebugMode then
-					warn("DomainX - Joining Discord")
+					warn("DomainX - 加入不和谐")
 				end
 				RequestEnabled({
 					Url = 'http://127.0.0.1:6463/rpc?v=1',
@@ -3654,23 +3654,23 @@ function VersionCheck()
 		end
 	else
 		if DebugMode then
-			warn("DomainX - No Version File")
+			warn("DomainX - 没有版本文件")
 		end
 		if not firsttime then
 			if DebugMode then
-				warn("DomainX - Not First Time, notifying")
+				warn("DomainX - 不是第一次，通知")
 			end
-			Notify("Update installed","DomainX was updated to "..ReleaseType.." "..Release,4400701828)
+			Notify("更新已安装","domainx已更新为 "..ReleaseType.." "..Release,4400701828)
 			local num = math.random(1,5)
 			if num == 2 then
 				PromptPremium()
 				if DebugMode then
-					warn("DomainX - Prompting Premium")
+					warn("DomainX - 提示溢价")
 				end
 			end
 		end
 		if DebugMode then
-			warn("DomainX - Could be first time, continuing")
+			warn("DomainX - 可能第一次，继续")
 		end
 		local HttpService = game:GetService("HttpService")
 		local RequestEnabled = (syn and syn.request) or (http and http.request) or http_request
@@ -3689,15 +3689,15 @@ function VersionCheck()
 				})
 			})
 			if DebugMode then
-				warn("DomainX - Joining Discord")
+				warn("DomainX - 加入不和谐")
 			end
 		end
 		if DebugMode then
-			warn("DomainX - Starting writefile")
+			warn("DomainX - 启动写入文件")
 		end
 		writefile("DomainX Version.txt",tostring(Release))
 		if DebugMode then
-			warn("DomainX - Writing new version file")
+			warn("DomainX - 编写新版本文件")
 		end
 	end
 end
@@ -3705,13 +3705,13 @@ end
 function ContinueBoot()
 	DMNReady = true
 	if DebugMode then
-		warn("DomainX - Continuing Boot Process (begun)")
+		warn("DomainX - 继续启动过程（开始）")
 	end
 	Domain.Premium.Robux.Text = "or 2899 Robux"
 	FirstCheck()
 	VersionCheck()
 	if DebugMode then
-		warn("DomainX - Checked Version success")
+		warn("DomainX - 检查版本的成功")
 	end
 
 	if getconnections then
@@ -3719,7 +3719,7 @@ function ContinueBoot()
 			v:Disable()
 		end
 		if DebugMode then
-			warn("DomainX - Disabled ScriptContext Errors")
+			warn("DomainX - 禁用脚本上下文错误")
 		end
 	end
 	for _, ob in ipairs(Domain:GetDescendants()) do
@@ -3728,22 +3728,22 @@ function ContinueBoot()
 		end
 	end
 	if DebugMode then
-		warn("DomainX - Increasing ZIndex")
+		warn("DomainX - 增加Zindex")
 	end
 	if UserIsPro and ThemeEnabled then
 		LoadThemes()
 	end
 	if DebugMode then
-		warn("DomainX - Loading Themes (if any)")
+		warn("DomainX - 装载主题（如果有的话）")
 	end
 	if ThemeEnabled and not UserIsPro then
-		Toast("You must be Pro to use Themes")
+		Toast("您必须使用主题")
 		PromptPremium()
 	end
 
 	StartPopUpFramework()
 	if DebugMode then
-		warn("DomainX - Starting pop up framework")
+		warn("DomainX - 启动弹出框架")
 	end
 	StartAntiKick()
 	StartAntiIdle()
@@ -3765,7 +3765,7 @@ function ContinueBoot()
 	Domain.Main.Visible = true
 
 	if DebugMode then
-		warn("DomainX - Started AntiKick and AntiIdle")
+		warn("DomainX - 开始反踢和反闲置")
 	end
 
 
@@ -3780,37 +3780,37 @@ function ContinueBoot()
 		end
 		Domain.Home.User.Avatar.Image = game:GetService("Players"):GetUserThumbnailAsync(LocalPlayer.UserId,Enum.ThumbnailType.HeadShot,Enum.ThumbnailSize.Size420x420)
 		if DebugMode then
-			warn("DomainX - Finished Player Data")
+			warn("DomainX - 完成了播放器数据")
 		end	
 	end
 	if not Connected then
-		Toast("Unable to connect to DomainX server","GothamBold")
+		Toast("无法连接到DomainX Server","Gothambold")
 		UserIsPremium = false
 		UserIsPro = false
 	end	
 	if not ExecutorAutomatic or firsttime then
 		if DebugMode then
-			warn("DomainX - First time or not autoexec")
+			warn("DomainX - 第一次或没有自动执行")
 		end
 		local sound = Instance.new("Sound")
 		sound.Parent = Domain
 		sound.SoundId = "rbxassetid://"..6958727243
 		sound.Name = "boot"
 		if DebugMode then
-			warn("DomainX - Instance Success!")
+			warn("DomainX - 实例成功!")
 		end
 		sound.Volume = 10
 		sound.PlayOnRemove = true
 		if DebugMode then
-			warn("DomainX - Waiting for sound load")
+			warn("DomainX - 等待声音负荷")
 		end
 		sound:Destroy()
 		if DebugMode then
-			warn("DomainX - Destroyed sound (loaded)")
+			warn("DomainX - 摧毁了声音（加载）")
 		end
 		wait(0.75)
 		if DebugMode then
-			warn("DomainX - Preparing effect")
+			warn("DomainX - 准备效果")
 		end
 		if workspace.CurrentCamera.FieldOfView <= 71 and workspace.CurrentCamera.FieldOfView >= 70  then
 			if DebugMode then
@@ -3827,31 +3827,31 @@ function ContinueBoot()
 		wait(0.6)
 		Domain.Main.KeybindNote.Visible = false
 		if DebugMode then
-			warn("DomainX - Keybind Note false")
+			warn("DomainX - 键绑定注意假")
 		end
 		if DebugMode then
-			warn("DomainX - Opening main")
+			warn("DomainX - 开放主要")
 		end
 		OpenMain()
 		if DebugMode then
-			warn("DomainX - Opened Main")
+			warn("DomainX - 打开主要")
 		end
 
 	else
 		if DebugMode then
-			warn("DomainX - Autoexec")
+			warn("DomainX - 自动执行")
 		end
 		wait(1)
-		Domain.Main.KeybindNote.Text = "tap "..Keybind.." to start"
+		Domain.Main.KeybindNote.Text = "请点按 "..Keybind.." 开始"
 		Domain.Main.Position = UDim2.new(0.5,0,1.05,0)
 		Domain.Main.KeybindNote.Visible = true
 		Domain.Main.Visible = true
 	end
 	if PremiumToastRequired == true then
-		Toast("Successfully upgraded license","GothamBlack")
+		Toast("成功升级许可证","GoThamBlack")
 	end
 
-	Toast("Welcome to DomainX v"..Release.. ", "..LocalPlayer.DisplayName,"GothamBold")
+	Toast("谢谢使用xgo Hub 版本:"..Release.. ", "..LocalPlayer.DisplayName,"GothamBold")
 
 	--if protected then
 	--	if Client ~= "Universal" then
@@ -3898,12 +3898,12 @@ function ContinueBoot()
 	end
 
 	if CheckWritefile() == true then
-		-- Writefile check! true
-		if not isfolder(CustomFolderName) then -- folder no existo,
-			makefolder(CustomFolderName) -- make folder
-		else -- folder existo
+		-- 写入文件检查！ 真正
+		if not isfolder(CustomFolderName) then -- 文件夹不存在，
+			makefolder(CustomFolderName) -- 制作文件夹
+		else -- 文件夹存在
 			local LoadedCustomScripts = 0
-			for _, file in ipairs(listfiles(CustomFolderName)) do -- check files
+			for _, file in ipairs(listfiles(CustomFolderName)) do -- 检查文件
 				local NewCustomScript = game:GetService("HttpService"):JSONDecode(readfile(file))
 				local NewTable = {
 					Name = NewCustomScript.Name,
@@ -3915,12 +3915,12 @@ function ContinueBoot()
 				LoadedCustomScripts = LoadedCustomScripts + 1
 			end
 			if LoadedCustomScripts == 1 then
-				Notify("System","Successfully loaded "..LoadedCustomScripts.." custom script",3944680095)
+				Notify("系统","成功加载"..LoadedCustomScripts.." 自定义脚本",3944680095)
 			elseif LoadedCustomScripts > 1 then
-				Notify("System","Successfully loaded "..LoadedCustomScripts.." custom scripts",3944680095)
+				Notify("系统","成功加载 "..LoadedCustomScripts.." 自定义脚本",3944680095)
 			end
 			if not UserIsPremium and LoadedCustomScripts > 0 then
-				Notify("System","Custom Scripts Disabled - You must be Essential to use these",3944680095)
+				Notify("系统","自定义脚本已禁用 - 您必须是必不可少的使用这些",3944680095)
 				PromptPremium()
 			end	
 		end
@@ -3954,13 +3954,13 @@ function ContinueBoot()
 		end
 	end
 	if DebugMode then
-		warn("Do.baX - Booted, ready!")
+		warn("Do.baX - 启动，准备好！")
 	end
 end
 
 function CheckLatest()
 	if DebugMode then
-		warn("DomainX - Checking version")
+		warn("DomainX - 检查版本")
 	end
 	--loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/routine',true))()
 	--local ver = game:HttpGet('https://raw.githubusercontent.com/shlexware/domainx/main/latest')
@@ -3978,12 +3978,12 @@ end
 
 function BootDomainX()
 	if DebugMode then
-		warn("DomainX - Beginning Boot Process")
+		warn("DomainX  - 开始引导过程")
 	end
 	Domain.Main.Visible = true
 	Domain.Main.Position = UDim2.new(0.5, 0, 1.05, 0)
 	Domain.Main.KeybindNote.Position = UDim2.new(0.5,0,-1.303,0)
-	Domain.Main.KeybindNote.Text = "Loading DomainX"
+	Domain.Main.KeybindNote.Text = "加载domainx"
 	Domain.Main.KeybindNote.Visible = true
 	Domain.Main.Buttons.ModulesButton.Visible = false
 	Domain.Main.KeybindNote.TextTransparency = 0.4
@@ -4001,14 +4001,14 @@ function BootDomainX()
 	UpdateExecutor()
 
 	if not DomainEnabled then
-		Notify("Not Enabled","Domain X is currently disabled",4384402990)
+		Notify("未启用","域X当前已禁用",4384402990)
 		wait(NotificationDuration+3)
 		Domain:Destroy()
 		return
 	end
 
 	if DebugMode then
-		warn("DomainX - Continuing Boot Process")
+		warn("DomainX - 继续启动过程")
 	end
 	ContinueBoot()
 
@@ -4019,7 +4019,7 @@ end
 
 
 
--- Main functionality of core buttons
+-- 核心按钮的主要功能
 
 Domain.Main.Buttons.HomeButton.Interact.MouseButton1Click:Connect(function()
 	local transitionInfo = TweenInfo.new(0.2, Enum.EasingStyle.Quint)
@@ -4038,9 +4038,9 @@ end)
 
 Domain.Home.Discord.Copyframe.Copy.MouseButton1Click:Connect(function()
 	CopyDiscord()
-	Domain.Home.Discord.Info.Text = "Successfully copied the discord invite link to your clipboard."
+	Domain.Home.Discord.Info.Text = "成功复制了xgo 群聊链接到剪贴板."
 	wait(3)
-	Domain.Home.Discord.Info.Text = "We'd love to have you join our community! Tap the button to <b>copy</b> the link to your <b>clipboard</b>"
+	Domain.Home.Discord.Info.Text = "欢迎加入xgo群聊 点按按钮到<b>复制</ b>到您<b>剪贴板</ b>的链接"
 end)
 
 Domain.Main.Buttons.PlayerButton.Interact.MouseButton1Click:Connect(function()
@@ -4113,7 +4113,7 @@ end)
 
 function Rejoin()
 	if #game.Players:GetPlayers() <= 1 then
-		LocalPlayer:Kick("\nDMNX - Rejoining Server")
+		LocalPlayer:Kick("\nDMNX - 重新加入服务器")
 		wait()
 		game:GetService('TeleportService'):Teleport(game.PlaceId, LocalPlayer)
 	else
@@ -4126,7 +4126,7 @@ end
 function Invisible()
 	if invisRunning then return end
 	invisRunning = true
-	-- Full credit to AmokahFox @V3rmillion
+	-- 对Amokahfox @ V3RMillion的全额信用
 	local Player = LocalPlayer
 	repeat wait(.1) until Player.Character
 	local Character = Player.Character
@@ -4299,20 +4299,20 @@ Domain.Player.Fly.Interact.MouseButton1Click:Connect(function()
 			local tween = TweenService:Create(Domain.Player.Fly, transitionInfo, {BackgroundColor3 = Color3.fromRGB(62, 62, 62)})
 			tween:Play()
 		end
-		Domain.Player.Fly.Popup.Title.Text = "Fly"
+		Domain.Player.Fly.Popup.Title.Text = "飞行"
 		Domain.Player.Fly.Interact.Image = "rbxassetid://3926305904"
 		Domain.Player.Fly.Interact.ImageRectOffset = Vector2.new(124,364)
-		Toast("Disabled flight")
+		Toast("飞行模式")
 		Unfly()
 	else 
 		local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 		local tween = TweenService:Create(Domain.Player.Fly, transitionInfo, {BackgroundColor3 = Color3.fromRGB(0, 132, 70)})
 		tween:Play()
 
-		Domain.Player.Fly.Popup.Title.Text = "Unfly"
+		Domain.Player.Fly.Popup.Title.Text = "联合国飞"
 		Domain.Player.Fly.Interact.Image = "rbxassetid://3926307971"
 		Domain.Player.Fly.Interact.ImageRectOffset = Vector2.new(884,324)
-		Toast("Enabled flight")
+		Toast("启用飞行")
 		Fly()
 	end
 end)
@@ -4321,7 +4321,7 @@ function PlaySound()
 	if Domain:FindFirstChildWhichIsA("Sound") then
 		Domain:FindFirstChildWhichIsA("Sound"):Destroy()
 	end
-	Domain.Home.Music.PlayingTitle.Text = "Now Playing"
+	Domain.Home.Music.PlayingTitle.Text = "现在玩"
 	MusicPlaying = true
 	local MusicSound = Instance.new("Sound",Domain)
 	MusicSound.Volume = 1
@@ -4334,31 +4334,31 @@ function PlaySound()
 	if CurrentMusicInfo then
 		Domain.Home.Music.Playing.Text = CurrentMusicInfo.Name
 	else
-		Domain.Home.Music.Playing.Text = "Unknown"
+		Domain.Home.Music.Playing.Text = "未知"
 	end
 	Domain.Home.Music.Toggle.ImageRectOffset = Vector2.new(804,124)
-	Toast("Playing music using ShlexSound")
+	Toast("xgo加载中 演奏音乐")
 end
 
 Domain.Home.Music.Toggle.MouseButton1Click:Connect(function()
 	if MusicPlaying then
 		MusicPlaying = false
 		if not Domain:FindFirstChildWhichIsA("Sound") then
-			Toast("Domain was unable to locate any Sound to stop")
+			Toast("域无法定位任何声音来停止")
 			Domain.Home.Music.Toggle.ImageRectOffset = Vector2.new(764,244)
 		else
 			Domain.Home.Music.Toggle.ImageRectOffset = Vector2.new(764,244)
 			Domain:FindFirstChildWhichIsA("Sound"):Pause()
-			Toast("Stopped Sound")
+			Toast("停止声音")
 		end
 	elseif not MusicPlaying then
 		if not Domain:FindFirstChildWhichIsA("Sound") then
-			Toast("Please start a sound using the Asset ID bar above")
+			Toast("请使用上面的资产ID栏开始声音")
 		else
 			MusicPlaying = true
 			Domain.Home.Music.Toggle.ImageRectOffset = Vector2.new(804,124)
 			Domain:FindFirstChildWhichIsA("Sound"):Resume()
-			Toast("Resumed sound")
+			Toast("恢复声音")
 		end
 	end
 end)
@@ -4386,9 +4386,9 @@ function ChangeKeybind(Key)
 	Domain.Home.Keybind.KeyBG.KeyBox:ReleaseFocus()
 	if CheckWritefile() then
 		writefile("DomainX Keybind.txt",tostring(NewKeyNoEnum))
-		Toast("Successfully changed Keybind to "..tostring(NewKeyNoEnum))
+		Toast("成功更改了键控"..tostring(NewKeyNoEnum))
 	else
-		Toast("Successfully changed Keybind to "..tostring(NewKeyNoEnum)..", however we're unable to save for next use")
+		Toast("成功更改了键控"..tostring(NewKeyNoEnum)..", 但是我们无法保存下一次使用")
 	end
 end
 
@@ -4433,12 +4433,12 @@ game.Players.PlayerAdded:Connect(function(Player)
 	if Domain:FindFirstChild("Home") == false then
 		return
 	end
-	Domain.Home.Data.data.Players.Text = "Players: <b>"..tostring(#game.Players:GetChildren()).."/"..tostring(game.Players.MaxPlayers).."</b>"
-	if Player.Name == "shlexius" then
-		Toast("The developer of DomainX, shlex, has joined your server")
+	Domain.Home.Data.data.Players.Text = "玩家: <b>"..tostring(#game.Players:GetChildren()).."/"..tostring(game.Players.MaxPlayers).."</b>"
+	if Player.Name == "GTAFAW" then
+		Toast("脚本作者xxxxgo 加入了您的服务器!!!!!")
 	end
 	if LocalPlayer:IsFriendsWith(Player.UserId) then
-		Notify("Friend Joined",Player.Name..", your friend, has joined your server",4335480896)
+		Notify("朋友加入了",Player.Name..", 你的朋友加入了你的服务器",4335480896)
 	end
 	AddPlayer(Player)
 end)
@@ -4480,7 +4480,7 @@ function WalkupdateSlider()
 	local inverse_interpolation = (posX - Walkpadding.Start) / (Walkpadding.End - Walkpadding.Start)
 	TweenService:Create(Walkbar, TweenInfo.new(.7,Enum.EasingStyle.Quint),  {Size = UDim2.new(inverse_interpolation, 0, 1, 0)}):Play()
 	local value = math.floor(Walklimit[1] + (Walklimit[2] - Walklimit[1]) * inverse_interpolation + .5)
-	Walklabel.Text = value.." walkspeed"
+	Walklabel.Text = value.." 步行速度"
 	LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = value
 end
 
@@ -4512,7 +4512,7 @@ function JumpupdateSlider()
 	local inverse_interpolation = (posX - Jumppadding.Start) / (Jumppadding.End - Jumppadding.Start)
 	TweenService:Create(Jumpbar, TweenInfo.new(.7,Enum.EasingStyle.Quint),  {Size = UDim2.new(inverse_interpolation, 0, 1, 0)}):Play()
 	local value = math.floor(Jumplimit[1] + (Jumplimit[2] - Jumplimit[1]) * inverse_interpolation + .5)
-	Jumplabel.Text = value.." jumppower"
+	Jumplabel.Text = value.." 跳跃力量"
 	LocalPlayer.Character:WaitForChild("Humanoid").JumpPower = value
 
 end
@@ -4545,7 +4545,7 @@ function flyupdateSlider()
 	local inverse_interpolation = (posX - flypadding.Start) / (flypadding.End - flypadding.Start)
 	TweenService:Create(flybar, TweenInfo.new(.7,Enum.EasingStyle.Quint),  {Size = UDim2.new(inverse_interpolation, 0, 1, 0)}):Play()
 	local value = math.floor(flylimit[1] + (flylimit[2] - flylimit[1]) * inverse_interpolation + .5)
-	flylabel.Text = value.." flyspeed"
+	flylabel.Text = value.." 飞行速度"
 	PlayerFlySpeed = value
 end
 
@@ -4564,14 +4564,14 @@ end)
 
 Domain.JoinCodes.CreateJC.MouseButton1Click:Connect(function()
 	if UserIsPro then
-		Toast("Creating Join Code..")
+		Toast("创建加入代码..")
 		local result = game:HttpGet("https://shlex.dev/api/joincodes/createcode.php?gid=".. game.PlaceId ..":".. game.JobId)
 		Domain.CreateCode.Visible = true
-		if result ~= "fail" then
+		if result ~= "失败" then
 			Domain.CreateCode.GeneratedCode.TextEditable = false
 			Domain.CreateCode.GeneratedCode.ClearTextOnFocus = false
 			Domain.CreateCode.GeneratedCode.Text = result
-			Toast("Copied '"..result.."', your join code, to clipboard")
+			Toast("复制 '"..result.."', 您的加入代码,剪贴板")
 			if setclipboard then
 				setclipboard(result)
 			elseif copyclipboard then
@@ -4579,7 +4579,7 @@ Domain.JoinCodes.CreateJC.MouseButton1Click:Connect(function()
 			end
 		end
 	else
-		Toast("You have to be Pro to use this feature")
+		Toast("您必须使用此功能")
 		PromptPremium()
 	end
 end)
@@ -4597,11 +4597,11 @@ Domain.JoinCodes.CodeBox.JCText.FocusLost:Connect(function()
 		local serverId = decoded["ServerId"]
 		for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. placeId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
 			if v.id == serverId then
-				Domain.JoinCodes.PlrOnlineText.Text = v.playing.. " players in server"
+				Domain.JoinCodes.PlrOnlineText.Text = v.playing.. " 服务器中的玩家"
 			end
 		end	
 	else
-		Toast("Unable to locate Join Code data")
+		Toast("无法找到连接代码数据")
 	end	
 end)
 
@@ -4615,7 +4615,7 @@ Domain.JoinCodes.CodeBox.SendJC.MouseButton1Click:Connect(function()
 
 		local placeId = decoded["Game"]
 		local serverId = decoded["ServerId"]
-		Toast("Teleporting..")
+		Toast("瞬移..")
 		game:GetService("TeleportService"):TeleportToPlaceInstance(placeId, serverId)
 	end	
 end)
@@ -4802,8 +4802,9 @@ LocalPlayer.CharacterAdded:Connect(function(Character)
 	local transitionInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quint)
 	local tween = TweenService:Create(Jumpbar, transitionInfo, {Size = UDim2.new(0,0,1,0)})
 	tween:Play()
-	Jumplabel.Text = "50 jumppower"
-	Walklabel.Text = "16 walkspeed"
+	Jumplabel.Text = "50 跳跃力量"
+	Walklabel.Text = "16 步行速度" 
+	flylabel.Text = "1 飞行速度"--xgo 标记修改处
 end)
 
 function BoostFrames()
