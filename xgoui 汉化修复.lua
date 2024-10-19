@@ -2575,7 +2575,7 @@ end
 
 function ChangeWallpaper(WallpaperFileName)
 	if not UserIsPro then
-		Toast("You must be Pro to use this feature!")
+		Toast("您必须使用此功能！")
 		PromptPremium()
 		return
 	end
@@ -2586,19 +2586,19 @@ function ChangeWallpaper(WallpaperFileName)
 			if getsynasset then
 				Domain.Home.Wallpaper.Image = getsynasset(WallpaperFileName)
 				writefile("DomainX Wallpaper.txt",WallpaperFileName)
-				Toast("Sucessfully changed wallpaper to "..WallpaperFileName)
+				Toast("成功更改壁纸 "..WallpaperFileName)
 			elseif getcustomasset then
 				Domain.Home.Wallpaper.Image = getcustomasset(WallpaperFileName)
 				writefile("DomainX Wallpaper.txt",WallpaperFileName)
-				Toast("Sucessfully changed wallpaper to "..WallpaperFileName)
+				Toast("成功更改壁纸 "..WallpaperFileName)
 			else
-				Toast("Missing getcustomasset function")
+				Toast("缺少getCustomasset函数")
 			end
 			local transitionInfo = TweenInfo.new(0.8, Enum.EasingStyle.Quint)
 			local tween = TweenService:Create(Domain.Home.Wallpaper, transitionInfo, {ImageTransparency = 0})
 			tween:Play()
 		else
-			Notify("Couldn't locate file","We couldn't locate the file for use, make sure you add .png or .jpeg to the textbox",3944676352)
+			Notify("无法定位文件","我们无法找到文件进行使用，请确保将.png或.jpeg添加到文本框中",3944676352)
 		end
 	end
 end
@@ -2622,7 +2622,7 @@ function Execute(String)
 	if loadstring then
 		loadstring(game:HttpGet(String, true))()
 	else
-		Toast("Missing loadstring function")
+		Toast("缺少加载函数")
 	end
 end
 
@@ -2632,14 +2632,14 @@ function PromptDetection(Script)
 			return
 		else
 			Domain.Detection.Banner.Visible = true
-			Domain.Detection.Banner.Title.Text = "Premium Script"
+			Domain.Detection.Banner.Title.Text = "优质脚本"
 		end
 	else
 		Domain.Detection.Banner.Visible = false
 	end
 	if CustomScriptEnabled then
 		Domain.Detection.Banner.Visible = true
-		Domain.Detection.Banner.Title.Text = "Custom Script"
+		Domain.Detection.Banner.Title.Text = "自定义脚本"
 	end
 	Domain.Detection.Banner.BackgroundTransparency = 1
 	Domain.Detection.Banner.Title.TextTransparency = 1
@@ -3273,7 +3273,7 @@ function Serverhop()
 		local tween = TweenService:Create(Domain.Player.Serverhop, transitionInfo, {BackgroundColor3 = Color3.fromRGB(0, 132, 70)})
 		tween:Play()	
 		serverhopdb = true
-		Domain.Serverhop.ProgressInfo.Text = "Fetching Servers"
+		Domain.Serverhop.ProgressInfo.Text = "提取服务器"
 		OpenServerhopMenu()
 
 		local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
@@ -3305,7 +3305,7 @@ function Serverhop()
 			tween:Play()
 		end		
 		wait(0.6)
-		Domain.Serverhop.ProgressInfo.Text = "Finding best server"
+		Domain.Serverhop.ProgressInfo.Text = "找到最佳服务器"
 		local transitionInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quint)
 		local tween = TweenService:Create(Domain.Serverhop.ServerhopLoading.Progress, transitionInfo, {Size = UDim2.new(0.5,0,1,0)})
 		tween:Play()
@@ -3313,7 +3313,7 @@ function Serverhop()
 		local Amount = CheckServers()
 		if Amount == "NoFound" then
 			-- No Servers, return
-			Domain.Serverhop.ProgressInfo.Text = "No servers found"
+			Domain.Serverhop.ProgressInfo.Text = "没有找到服务器"
 			if ThemeEnabled then
 				local transitionInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 				local tween = TweenService:Create(Domain.Player.Serverhop, transitionInfo, {BackgroundColor3 = Theme.SecondaryColor})
@@ -3327,7 +3327,7 @@ function Serverhop()
 		elseif Amount > 0 then
 			-- Found more than 0 servers, let them know, then wait, then teleport
 			if not ServerhopCancelled then
-				Domain.Serverhop.ProgressInfo.Text = "Found server"
+				Domain.Serverhop.ProgressInfo.Text = "找到服务器"
 				local transitionInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quint)
 				local tween = TweenService:Create(Domain.Serverhop.ServerhopLoading.Progress, transitionInfo, {Size = UDim2.new(0.8,0,1,0)})
 				tween:Play()
@@ -3475,7 +3475,7 @@ function CheckWritefile()
 	if isfile and delfile and writefile and readfile then
 		return true
 	end
-	warn("Warning - writefile is not supported")
+	warn("警告 - 不支持WriteFile")
 	return false
 end
 
@@ -4863,17 +4863,17 @@ end)
 function CheckTime()
 
 	if tonumber(GetDate():format("#h")) > 12 then
-		Domain.Home.Welcome.Text = "Evening, "..LocalPlayer.DisplayName
+		Domain.Home.Welcome.Text = "欢迎使用 "..LocalPlayer.DisplayName
 	else
-		Domain.Home.Welcome.Text = "Morning, "..LocalPlayer.DisplayName
+		Domain.Home.Welcome.Text = "xgo 欢迎"..LocalPlayer.DisplayName
 	end
 	if tonumber(GetDate():format("#h")) == 0 then
-		Domain.Home.WelcomeSub.Text = "Remember to smile!"
+		Domain.Home.WelcomeSub.Text = "记住要微笑!"
 	elseif tonumber(GetDate():format("#h")) >= 1 then
-		Domain.Home.WelcomeSub.Text = "Up bright and early!"
+		Domain.Home.WelcomeSub.Text = "谢谢使用xgo脚本"
 	end
 	if tonumber(GetDate():format("#h")) > 19 then
-		Domain.Home.WelcomeSub.Text = "It's getting late.."
+		Domain.Home.WelcomeSub.Text = "它迟到了.."
 	end
 end
 
@@ -4886,18 +4886,17 @@ coroutine.wrap(function()
 		CheckTime()
 		local function updstuff()
 			timesince = timesince + 4
-			Domain.Home.Data.data.Executor.Text = "Executor: <b>"..Client.."</b>"
-			Domain.Home.Data.data.Version.Text = "Version: <b>v"..Release.."</b>"
-			Domain.Home.Data.data.Time.Text = "Time Since Boot: <b>"..tostring(timesince).."s</b>"
+			Domain.Home.Data.data.Executor.Text = "遗嘱执行人: <b>"..Client.."</b>"
+			Domain.Home.Data.data.Version.Text = "版本: <b>v"..Release.."</b>"
+			Domain.Home.Data.data.Time.Text = "自开机以来的时间: <b>"..tostring(timesince).."s</b>"
 			if not CheckWritefile() then
-				Domain.Home.Data.data.File.Text = "Data File: <b>Disabled</b>"
+				Domain.Home.Data.data.File.Text = "数据文件: <b>残</b>"
 			else
-				Domain.Home.Data.data.File.Text = "Data File: <b>Loaded</b>"
+				Domain.Home.Data.data.File.Text = "数据文件: <b>加载</b>"
 			end	
 
-
-		end
-
+       end
+       
 		pcall(updstuff)
 
 	end
@@ -4928,10 +4927,10 @@ coroutine.wrap(function()
 				FriendsInGame = FriendsInGame + 1
 			end
 		end
-		Domain.Home.Friends.All.FriendsAll.Text = tostring(FriendsInTotal).." users"
-		Domain.Home.Friends.Offline.FriendsOffline.Text = tostring(FriendsInTotal - OnlineFriends).." users"
-		Domain.Home.Friends.Online.FriendsOnline.Text = tostring(OnlineFriends).." users"
-		Domain.Home.Friends.InServer.FriendsInGame.Text = tostring(FriendsInGame).." users"
+		Domain.Home.Friends.All.FriendsAll.Text = tostring(FriendsInTotal).." 用户"
+		Domain.Home.Friends.Offline.FriendsOffline.Text = tostring(FriendsInTotal - OnlineFriends).." 用户"
+		Domain.Home.Friends.Online.FriendsOnline.Text = tostring(OnlineFriends).." 用户"
+		Domain.Home.Friends.InServer.FriendsInGame.Text = tostring(FriendsInGame).." 用户"
 	end
 	pcall(CheckFriends)
 end)()
@@ -4940,7 +4939,7 @@ end)()
 
 coroutine.wrap(function()
 	wait(1000)
-	Toast("Enjoying DomainX? Let us know in our Discord!")
+	Toast("享受domainx？ 让我们在我们的不和谐！")
 	Toast(DiscordLink,"GothamBold")
 end)()
 
