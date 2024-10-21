@@ -220,19 +220,19 @@ local UniversalScripts = {
 	xgov1 = {
 		Name = "xgo 游戏中心v1",
 		Author = "xgo 游戏v1",
-		Loadstring = "https://raw.githubusercontent.com/GTAFAW/lllllllllllllllllllllllll123V1XXXXgo/refs/heads/main/V1",
+		Loadstring = "https://raw.githubusercontent.com/xgomn/143628IIIIlllllliilililIIlll.YXZX.LUA/refs/heads/main/V1",
 	    Colour = Color3.fromRGB(57, 57, 57),
 	},
 	xgov2 = {
 		Name = "xgo 游戏中心v2",
 		Author = "xgo 游戏v2",
-		Loadstring = "https://raw.githubusercontent.com/xgomn/llllllllllllllllllllv2.lllllllua/refs/heads/main/V2",
+		Loadstring = "https://raw.githubusercontent.com/xgomn/143628IIIIlllllliilililIIlll.YXZX.LUA/refs/heads/main/V2",
 	    Colour = Color3.fromRGB(57, 57, 57),
 	},
     xgo = {
 		Name = "xgo 主页",
 		Author = "xgo 主页",
-		Loadstring = "https://raw.githubusercontent.com/xgomn/llllllllllllllll114514ZYXXXXXgO.lua/refs/heads/main/goto",
+		Loadstring = "https://raw.githubusercontent.com/xgomn/14362llll364XXGOLLLk22222/refs/heads/main/goto",
 	    Colour = Color3.fromRGB(57, 57, 57),
 	},
 }
