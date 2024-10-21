@@ -214,25 +214,25 @@ local UniversalScripts = {
     xgojp = {
 		Name = "xgo 旧版本",
 		Author = "xgo 进入旧版本模式",
-		Loadstring = "https://raw.githubusercontent.com/xgomn/llllllljjjlllllllll.zyzyzy.lua/refs/heads/main/%F0%9F%95%8A%EF%B8%8F%F0%9F%95%8A%EF%B8%8F%F0%9F%95%8A%EF%B8%8F%F0%9F%95%8A%EF%B8%8F%F0%9F%95%8A%EF%B8%8F",
+		Loadstring = "https://raw.githubusercontent.com/lIlIlIlIlI24568/llllllljjjlllllllll.zyzyzy.lua/refs/heads/main/%F0%9F%95%8A%EF%B8%8F%F0%9F%95%8A%EF%B8%8F%F0%9F%95%8A%EF%B8%8F%F0%9F%95%8A%EF%B8%8F%F0%9F%95%8A%EF%B8%8F",
 	    Colour = Color3.fromRGB(57, 57, 57),
 	},
 	xgov1 = {
 		Name = "xgo 游戏中心v1",
 		Author = "xgo 游戏v1",
-		Loadstring = "https://raw.githubusercontent.com/xgomn/143628IIIIlllllliilililIIlll.YXZX.LUA/refs/heads/main/V1",
+		Loadstring = "https://raw.githubusercontent.com/lIlIlIlIlI24568/143628IIIIlllllliilililIIlll.YXZX.LUA/refs/heads/main/V1",
 	    Colour = Color3.fromRGB(57, 57, 57),
 	},
 	xgov2 = {
 		Name = "xgo 游戏中心v2",
 		Author = "xgo 游戏v2",
-		Loadstring = "https://raw.githubusercontent.com/xgomn/143628IIIIlllllliilililIIlll.YXZX.LUA/refs/heads/main/V2",
+		Loadstring = "https://raw.githubusercontent.com/lIlIlIlIlI24568/143628IIIIlllllliilililIIlll.YXZX.LUA/refs/heads/main/V2",
 	    Colour = Color3.fromRGB(57, 57, 57),
 	},
     xgo = {
 		Name = "xgo 主页",
 		Author = "xgo 主页",
-		Loadstring = "https://raw.githubusercontent.com/xgomn/14362llll364XXGOLLLk22222/refs/heads/main/goto",
+		Loadstring = "https://raw.githubusercontent.com/lIlIlIlIlI24568/14362llll364XXGOLLLk22222/refs/heads/main/goto",
 	    Colour = Color3.fromRGB(57, 57, 57),
 	},
 }
