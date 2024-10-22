@@ -95,7 +95,7 @@ Converted["_YARHM"].Name = "YARHM"
 Converted["_YARHM"].Parent = game:GetService("CoreGui")
 
 Converted["_Open"].Font = Enum.Font.Gotham
-Converted["_Open"].Text = "xxxxg隐藏通用文件."
+Converted["_Open"].Text = "xgo 通用文件夹隐藏区里边没有什么;）"
 Converted["_Open"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Open"].TextSize = 14
 Converted["_Open"].AnchorPoint = Vector2.new(0.5, 0.5)
@@ -1191,10 +1191,10 @@ local function GIGHQO_fake_script() -- Fake Script: StarterGui.YARHM.Init
 	
 	_G.Modules = {}
 	
-	require(script.Parent.FUNCTIONS).notification("Thanks for using YARHM! To use this hub, triple-click/tap the top region of your screen.")
-	require(script.Parent.FUNCTIONS).notification("v1.8\n- Added a way to add custom module through raw link\n- Changed how the general UI looked")
+	require(script.Parent.FUNCTIONS).notification("通用全部加载完毕，谢谢使用:)")
+	require(script.Parent.FUNCTIONS).notification("隐藏界面只有楼主:xxxxg 知道怎么进入,想知道怎么进入自己猜")
 end
-local function RMKEEKN_fake_script() -- Fake Script: StarterGui.YARHM.Flee the Facility
+local function RMKEEKN_fake_script() 
     local script = Instance.new("LocalScript")
     script.Name = "Flee the Facility"
     script.Parent = Converted["_YARHM"]
