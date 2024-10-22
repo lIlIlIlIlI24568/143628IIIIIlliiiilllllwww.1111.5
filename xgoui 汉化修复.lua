@@ -91,7 +91,7 @@ Converted["_YARHM"].IgnoreGuiInset = true
 Converted["_YARHM"].ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
 Converted["_YARHM"].ResetOnSpawn = false
 Converted["_YARHM"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Converted["_YARHM"].Name = "YARHM"
+Converted["_YARHM"].Name = "xgo内部"
 Converted["_YARHM"].Parent = game:GetService("CoreGui")
 
 Converted["_Open"].Font = Enum.Font.Gotham
@@ -123,7 +123,7 @@ Converted["_Menu"].Parent = Converted["_YARHM"]
 Converted["_UICorner1"].Parent = Converted["_Menu"]
 
 Converted["_HubName"].Font = Enum.Font.GothamBold
-Converted["_HubName"].Text = "YARHM"
+Converted["_HubName"].Text = "xgo内部"
 Converted["_HubName"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubName"].TextScaled = true
 Converted["_HubName"].TextSize = 14
@@ -140,7 +140,7 @@ Converted["_HubName"].Name = "HubName"
 Converted["_HubName"].Parent = Converted["_Menu"]
 
 Converted["_HubDesc"].Font = Enum.Font.GothamBold
-Converted["_HubDesc"].Text = "yet another random hub menu"
+Converted["_HubDesc"].Text = "猫有九条命唯有一颗心"
 Converted["_HubDesc"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubDesc"].TextSize = 14
 Converted["_HubDesc"].TextWrapped = true
@@ -261,7 +261,7 @@ Converted["_Area"].Name = "Area"
 Converted["_Area"].Parent = Converted["_Menu"]
 
 Converted["_TextLabel"].Font = Enum.Font.GothamBold
-Converted["_TextLabel"].Text = "yet another random hub menu"
+Converted["_TextLabel"].Text = "一个随机的集线器菜单"
 Converted["_TextLabel"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel"].TextSize = 14
 Converted["_TextLabel"].AnchorPoint = Vector2.new(0.5, 0.5)
@@ -1441,7 +1441,7 @@ local function RMKEEKN_fake_script()
 			local NamecallMethod = getnamecallmethod()
 	
 			if NamecallMethod == "FireServer" and Args[1] == "SetPlayerMinigameResult" and antifail then
-				print("Minigame result - Intercepting result to true")
+				print("迷你游戏结果 - 拦截结果为true")
 				Args[2] = true
 			end
 	
@@ -1478,9 +1478,9 @@ local function RMKEEKN_fake_script()
 	
 	module[6] = {
 		Type = "Input",
-		Args = {"Input a walkspeed", "Set & Lock", function(Self, text)
+		Args = {"步行速度", "Set & Lock", function(Self, text)
 			if not tonumber(text) then
-				FUNCTIONS.notification("Input isn't a valid number.")
+				FUNCTIONS.notification("输入不是有效的数字.")
 				return
 			end
 			
@@ -1491,14 +1491,14 @@ local function RMKEEKN_fake_script()
 	
 	module[7] = {
 		Type = "Button",
-		Args = {"Unlock all", function()
+		Args = {"解锁所有人", function()
 			wslock = false
 		end,}
 	}	
 	
 	module[8] = {
 		Type = "Text",
-		Args = {"Locking means your speed will stay the same no matter what. This means you will not be slow when crawling or jumping as beast."}
+		Args = {"锁定意味着无论如何，您的速度将保持不变.这意味着当爬行或跳跃时，你不会慢慢."}
 	}
 	
 	
@@ -1506,7 +1506,7 @@ local function RMKEEKN_fake_script()
 end
 local function CSGP_fake_script() -- Fake Script: StarterGui.YARHM.Universal
     local script = Instance.new("LocalScript")
-    script.Name = "Universal"
+    script.Name = "万能"
     script.Parent = Converted["_YARHM"]
     local req = require
     local require = function(obj)
@@ -1529,12 +1529,12 @@ local function CSGP_fake_script() -- Fake Script: StarterGui.YARHM.Universal
 	
 	module[1] = {
 		Type = "Text",
-		Args = {"Universal module - Works on most games"}
+		Args = {"通用模块 - 适用于大多数游戏"}
 	}
 	
 	module[2] = {
 		Type = "Button",
-		Args = {"Infinite Yield", function(Self)
+		Args = {"无限产量", function(Self)
 			loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 		end}
 	}
@@ -1546,7 +1546,7 @@ local function CSGP_fake_script() -- Fake Script: StarterGui.YARHM.Universal
 	
 	module[4] = {
 		Type = "Button",
-		Args = {"Move YARHM trigger to the bottom", function(Self)
+		Args = {"将移动标题设置带底部", function(Self)
 			_G.YARHM.Open.UIStroke.Transparency = 0
 			_G.YARHM.Open.TextTransparency = 0
 			ts:Create(_G.YARHM.Open, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
@@ -1564,7 +1564,7 @@ local function CSGP_fake_script() -- Fake Script: StarterGui.YARHM.Universal
 	
 	module[5] = {
 		Type = "Button",
-		Args = {"Move YARHM trigger to the top", function(Self)
+		Args = {"将移动标题返回顶部", function(Self)
 			_G.YARHM.Open.UIStroke.Transparency = 0
 			_G.YARHM.Open.TextTransparency = 0
 			ts:Create(_G.YARHM.Open, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
@@ -1584,7 +1584,7 @@ local function CSGP_fake_script() -- Fake Script: StarterGui.YARHM.Universal
 end
 local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mystery 2
     local script = Instance.new("LocalScript")
-    script.Name = "Murder Mystery 2"
+    script.Name = "谋杀神秘2"
     script.Parent = Converted["_YARHM"]
     local req = require
     local require = function(obj)
@@ -1669,12 +1669,12 @@ local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mys
 	-- I honestly don't know what went wrong so if any of you experts know why this stuff aint working make a pull request :praying_hands_emoji:
 	
 	
-	module["Name"] = "Murder Mystery 2"
+	module["Name"] = "谋杀神秘2"
 	
 	-- Player ESP
 	workspace.ChildAdded:Connect(function(ch)
 		if ch.Name == "Normal" and playerESP then
-			fu.notification("Map has loaded, waiting for roles...")
+			fu.notification("地图已加载，等待角色...")
 			repeat
 				task.wait(1)
 			until findMurderer()
@@ -1704,13 +1704,13 @@ local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mys
 					end
 				end
 			end
-			fu.notification("Player ESP reloaded.")
+			fu.notification("玩家ESP重新加载.")
 		end
 	end)
 	
 	workspace.ChildRemoved:Connect(function(ch)
 		if ch.Name == "Normal" and playerESP then
-			fu.notification("Game ended, removing Player ESPs.")
+			fu.notification("游戏结束，删除ESP.")
 			for _, v in ipairs(script.Parent:GetChildren()) do if v.Name == "PlayerESP" then v:Destroy() end end
 		end
 	end)
@@ -1725,7 +1725,7 @@ local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mys
 			bguiclone.Adornee = workspace:FindFirstChild("GunDrop")
 			bguiclone.Enabled = true
 			bguiclone.Name = "DGBGUIClone"
-			fu.notification("Gun has been dropped! Find a yellow highlight.")
+			fu.notification("枪已经掉落了！ 找到黄色的亮点.")
 		end
 	end)
 	
@@ -1735,7 +1735,7 @@ local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mys
 			if script.Parent:FindFirstChild("DBGUIClone") then
 				script.Parent:FindFirstChild("DBGUIClone"):Destroy()
 			end
-			fu.notification("Someone has took the dropped gun.")
+			fu.notification("有人拿走了掉落的枪.")
 		end
 	end)
 	
@@ -1771,7 +1771,7 @@ local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mys
 	task.spawn(function()
 		while task.wait(1) do
 			if findSheriff() == game.Players.LocalPlayer and autoShooting then
-				fu.notification("Auto-shooting started.")
+				fu.notification("自动拍摄开始.")
 				repeat
 					task.wait(0.1)
 					local murderer = findMurderer()
@@ -1831,7 +1831,7 @@ local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mys
 							local character = player.Character
 							if not character:FindFirstChild("PlayerESP") then
 								local a = Instance.new("Highlight", script.Parent)
-								a.Name = "PlayerESP"
+								a.Name = "玩家ESP"
 								a.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
 								a.Adornee = character
 								a.FillColor = Color3.fromRGB(255, 255, 255)
@@ -1897,7 +1897,7 @@ local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mys
 	
 	module[4] = {
 		Type = "Button",
-		Args = {"Shoot murderer", function(Self)
+		Args = {"射杀凶手", function(Self)
 			if findSheriff() ~= game.Players.LocalPlayer then fu.notification("You're not sheriff/hero.") return end
 			if not findMurderer() then
 				fu.notification("No murderer to shoot.")
@@ -1925,7 +1925,7 @@ local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mys
 	
 	module[5] = {
 		Type = "Input",
-		Args = {"Shoot position offset", "Set", function(Self, text)
+		Args = {"射击位置偏移", "Set", function(Self, text)
 			if not tonumber(text) then fu.notification("Not a valid number.") return end
 			
 			if tonumber(text) > 10 then
@@ -1941,7 +1941,7 @@ local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mys
 	
 	module[6] = {
 		Type = "Text",
-		Args = {"The automatic murderer's shots can miss when the murderer moves. Shoot offset adjusts for the murderer's movement. Recommended is 3."}
+		Args = {"当凶手移动时，自动凶手的镜头就会错过. 射击抵消调整凶手的运动. 推荐是3."}
 	}
 	
 	module[7] = {
@@ -2000,14 +2000,14 @@ local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mys
 	
 	module[9] = {
 		Type = "Text",
-		Args = {"The tools below can be <font color='#FF0000'>detected,</font> both game-wise and player-wise. Use at your own risk.", "center"}
+		Args = {"以下工具可以是 <font color='#FF0000'>检测,</font> 游戏和玩家都是明智的.以自己的风险使用.", "center"}
 	}
 	
 	module[10] = {
 		Type = "Button",
-		Args = {"Fast-move to dropped gun", function(Self)
+		Args = {"快速移动到枪枪", function(Self)
 			if not workspace:FindFirstChild("GunDrop") then fu.notification("No dropped gun to be teleported to.") return end
-			fu.notification("Attempting a pathfind to gun..")
+			fu.notification("试图枪支到枪..")
 			
 			local pathToGun = phs:CreatePath({
 				AgentRadius = 3,
@@ -2027,7 +2027,7 @@ local function LOAOODV_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mys
 					}):Play()
 				end
 			else
-				fu.notification("Couldn't find a proper path to gun. Try moving a little closer to the gun.")
+				fu.notification("找不到枪的适当路径.尝试更靠近枪.")
 			end
 		end,}
 	}
