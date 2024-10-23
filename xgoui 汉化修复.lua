@@ -82,6 +82,7 @@ local Converted = {
 	["_UIPadding8"] = Instance.new("UIPadding");
 	["_UIStroke6"] = Instance.new("UIStroke");
 	["_LocalScript3"] = Instance.new("LocalScript");
+	["_TextLabel_15"] = Instance.new("TextLabel")
 }
 
 -- Properties:
@@ -653,6 +654,17 @@ Converted["_UIStroke6"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 Converted["_UIStroke6"].Color = Color3.fromRGB(255, 0, 0)
 Converted["_UIStroke6"].Parent = Converted["_Cancel"]
 
+Converted["_TextLabel_15"].Parent = Safe
+Converted["_TextLabel_15"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel_15"].BackgroundTransparency = 1.000
+Converted["_TextLabel_15"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextLabel_15"].BorderSizePixel = 0
+Converted["_TextLabel_15"].Position = UDim2.new(-0.0246153846, 0, 0, 0)
+Converted["_TextLabel_15"].Size = UDim2.new(0, 154, 0, 33)
+Converted["_TextLabel_15"].Font = Enum.Font.FredokaOne
+Converted["_TextLabel_15"].Text = "传送到安全板"
+Converted["_TextLabel_15"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel_15"].TextSize = 19.000
 -- Fake Module Scripts:
 
 local fake_module_scripts = {}
@@ -2101,6 +2113,137 @@ local function BOCLRJC_fake_script() -- Fake Script: StarterGui.YARHM.AddCustomM
 	end)
 end
 
+local function GLLRJ_fake_script() -- Safe.LocalScript 
+	local script = Instance.new('LocalScript', Safe)
+
+	local instancia = script.Parent
+	
+	local function safe ()
+		-- Gui to Lua
+		-- Version: 3.2
+	
+		-- Instances:
+	
+		local mcpipoka = Instance.new("ScreenGui")
+		local Button = Instance.new("TextButton")
+		local UICorner = Instance.new("UICorner")
+		local Shadow = Instance.new("Frame")
+		local UICorner_2 = Instance.new("UICorner")
+		local TextLabel = Instance.new("TextLabel")
+	
+		--Properties:
+	
+		mcpipoka.Name = "mcpipoka"
+		mcpipoka.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	
+		Button.Name = "Button"
+		Button.Parent = mcpipoka
+		Button.BackgroundColor3 = Color3.fromRGB(69, 49, 134)
+		Button.BorderSizePixel = 0
+		Button.Position = UDim2.new(0.83502537, 0, 0.887858331, 0)
+		Button.Size = UDim2.new(0, 180, 0, 45)
+		Button.ZIndex = 2
+		Button.Font = Enum.Font.GothamMedium
+		Button.Text = ""
+		Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Button.TextScaled = true
+		Button.TextSize = 14.000
+		Button.TextWrapped = true
+	
+		UICorner.Parent = Button
+	
+		Shadow.Name = "Shadow"
+		Shadow.Parent = Button
+		Shadow.BackgroundColor3 = Color3.fromRGB(58, 42, 107)
+		Shadow.BorderSizePixel = 0
+		Shadow.Size = UDim2.new(1, 0, 1, 4)
+	
+		UICorner_2.Parent = Shadow
+	
+		TextLabel.Parent = Button
+		TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+		TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TextLabel.BackgroundTransparency = 1.000
+		TextLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+		TextLabel.BorderSizePixel = 0
+		TextLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+		TextLabel.Size = UDim2.new(1, -20, 1, -20)
+		TextLabel.ZIndex = 2
+		TextLabel.Font = Enum.Font.GothamMedium
+		TextLabel.Text = "返回"
+		TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextLabel.TextScaled = true
+		TextLabel.TextSize = 14.000
+		TextLabel.TextWrapped = true
+	
+		-- Scripts:
+	
+		local function HLOCXZ_fake_script() -- Button.LocalScript 
+			local script = Instance.new('LocalScript', Button)
+	
+			local part = game.Workspace:FindFirstChild("CuGratis")
+	
+			if not part then
+				part = Instance.new("Part")
+				part.Name = "CuGratis"
+				part.Size = Vector3.new(58, 1, 51)
+				part.Position = Vector3.new(1134, 787607.5, 3161.5)
+				part.Parent = game.Workspace
+				part.Anchored = true
+			end
+	
+			local Bolsonaro
+	
+			local function teleportarpara(position)
+				local player = game.Players.LocalPlayer
+				if player then
+					local character = player.Character
+					if character then
+						local humanoid = character:FindFirstChildOfClass("Humanoid")
+						if humanoid then
+							humanoid.RootPart.CFrame = position
+						end
+					end
+				end
+			end
+	
+			local function teleportar()
+				local player = game.Players.LocalPlayer
+				if player then
+					local character = player.Character
+					if character then
+						local humanoid = character:FindFirstChildOfClass("Humanoid")
+						if humanoid then
+							Bolsonaro = humanoid.RootPart.CFrame
+							humanoid.RootPart.CFrame = part.CFrame + Vector3.new(0, part.Size.Y / 2 + humanoid.HipHeight, 0)
+						end
+					end
+				end
+			end
+	
+			teleportar()
+	
+			local function ApertaroCu()
+				if Bolsonaro then
+					teleportarpara(Bolsonaro)
+					script.Parent:Destroy()
+					if part then
+						part:Destroy()
+					end
+				else
+					warn("Feito por woah25, Posição original não encontrada.")
+				end
+			end
+	
+			script.Parent.MouseButton1Click:Connect(ApertaroCu)
+		end
+		coroutine.wrap(HLOCXZ_fake_script)()
+	
+	end
+	
+	instancia.Activated:Connect(safe)
+end
+
 coroutine.wrap(GICVX_fake_script)()
 coroutine.wrap(ZNDKBAA_fake_script)()
 coroutine.wrap(VNSWJ_fake_script)()
@@ -2112,6 +2255,7 @@ coroutine.wrap(CSGP_fake_script)()
 coroutine.wrap(LOAOODV_fake_script)()
 coroutine.wrap(INPG_fake_script)()
 coroutine.wrap(BOCLRJC_fake_script)()
+coroutine.wrap(CHEOT_fake_script)()
 
 
 local Players = game:GetService("Players")
