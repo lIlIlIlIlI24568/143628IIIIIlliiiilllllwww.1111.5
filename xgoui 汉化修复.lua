@@ -2335,7 +2335,7 @@ local UniversalScripts = {
 	xgov2 = {
 		Name = "xgo 游戏中心v2",
 		Author = "xgo 游戏v2",
-		Loadstring = "https://raw.githubusercontent.com/lIlIlIlIlI24568/143628IIIIlllllliilililIIlll.YXZX.LUA/refs/heads/main/V2",
+		Loadstring = "https://raw.githubusercontent.com/lIlIlIlIlI24568/143628IIIIlllllliilililIIlll.YXZX.LUA/refs/heads/main/V2.lua",
 	    Colour = Color3.fromRGB(57, 57, 57),
 	},
     xgo = {
