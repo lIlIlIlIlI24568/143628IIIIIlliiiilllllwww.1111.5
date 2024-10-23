@@ -2462,11 +2462,11 @@ local DetectionScripts = {
 		Loadstring = "https://raw.githubusercontent.com/HDTerebi/DSRPG2/master/Shitty%20GUI.lua",
 	},
 	NDS = {
-		Name = "Natural Disaster Survival",
-		Description = "xgo留言:之后更新",
+		Name = "自然灾害模拟器",
+		Description = "自然灾害生存",
 		Games = {189707},
 		Premium = false,
-		Loadstring = "https://gist.githubusercontent.com/TurkOyuncu99/7c75386107937fa006304efd24543ad4/raw/8d759dfcd95d39949c692735cfdf62baec0bf835/cafwetweg",
+		Loadstring = "https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E8%87%AA%E7%84%B6%E7%81%BE%E5%AE%B3",
 	},
 	RoGhoul = {
 		Name = "Ro-Ghoul",
