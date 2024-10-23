@@ -82,7 +82,7 @@ local Converted = {
 	["_UIPadding8"] = Instance.new("UIPadding");
 	["_UIStroke6"] = Instance.new("UIStroke");
 	["_LocalScript3"] = Instance.new("LocalScript");
-	["_TextLabel_15"] = Instance.new("TextLabel")
+	["_TextLabe16"] = Instance.new("TextLabel")
 }
 
 -- Properties:
@@ -654,17 +654,17 @@ Converted["_UIStroke6"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 Converted["_UIStroke6"].Color = Color3.fromRGB(255, 0, 0)
 Converted["_UIStroke6"].Parent = Converted["_Cancel"]
 
-Converted["_TextLabel_15"].Parent = Safe
-Converted["_TextLabel_15"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_TextLabel_15"].BackgroundTransparency = 1.000
-Converted["_TextLabel_15"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_TextLabel_15"].BorderSizePixel = 0
-Converted["_TextLabel_15"].Position = UDim2.new(-0.0246153846, 0, 0, 0)
-Converted["_TextLabel_15"].Size = UDim2.new(0, 154, 0, 33)
-Converted["_TextLabel_15"].Font = Enum.Font.FredokaOne
-Converted["_TextLabel_15"].Text = "传送到安全板"
-Converted["_TextLabel_15"].TextColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_TextLabel_15"].TextSize = 19.000
+Converted["_TextLabe16"].Parent = Safe
+Converted["_TextLabe16"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabe16"].BackgroundTransparency = 1.000
+Converted["_TextLabe16"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextLabe16"].BorderSizePixel = 0
+Converted["_TextLabe16"].Position = UDim2.new(-0.0246153846, 0, 0, 0)
+Converted["_TextLabe16"].Size = UDim2.new(0, 154, 0, 33)
+Converted["_TextLabe16"].Font = Enum.Font.FredokaOne
+Converted["_TextLabe16"].Text = "传送到安全板"
+Converted["_TextLabe16"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabe16"].TextSize = 19.000
 -- Fake Module Scripts:
 
 local fake_module_scripts = {}
