@@ -96,11 +96,11 @@ local siriusValues = {
 	interfaceAsset = 14183548964,
 	cdn = "https://cdn.sirius.menu/SIRIUS-SCRIPT-CORE-ASSETS/",
 	icons = "https://cdn.sirius.menu/SIRIUS-SCRIPT-CORE-ASSETS/Icons/",
-	enableExperienceSync = false, -- 由于缺乏白名单，游戏不再提供，他们可以在以后的日期进行开放，但是它们被修补，截至现在，并不是最终用户的毫无用处. 打开这可能会引入“假功能”.
+	enableExperienceSync = false, -- 由于缺乏白名单，游戏不再提供，他们可以在以后的日期进行开放，但是它们被修补，截至现在，并不是最终用户的毫无用处. 打开这可能会引入"假功能".
 	games = {
 		BreakingPoint = {
 			name = "突破点",
-			description = "球员坐在桌子上. 他们唯一的目标？成为最后一个人的身体. 执行此脚本以获得不公平的优势.",
+			description = "球员坐在桌子上. 他们唯一的目标?成为最后一个人的身体. 执行此脚本以获得不公平的优势.",
 			id = 648362523,
 			enabled = true,
 			raw = "BreakingPoint",
@@ -108,7 +108,7 @@ local siriusValues = {
 		},
 		MurderMystery2 = {
 			name = "谋杀神秘2",
-			description = "发生了谋杀案，你能成为找到凶手的人，还是杀死你的下一个受害者？ 执行此脚本以获得不公平的优势.",
+			description = "发生了谋杀案，你能成为找到凶手的人,还是杀死你的下一个受害者?执行此脚本以获得不公平的优势.",
 			id = 142823291,
 			enabled = true,
 			raw = "MurderMystery2",
@@ -124,7 +124,7 @@ local siriusValues = {
 		},
 		Strucid = {
 			name = "Strucid",
-			description = "用建筑力学与朋友和敌人进行战斗！ 执行此脚本以获得不公平的优势.",
+			description = "用建筑力学与朋友和敌人进行战斗!执行此脚本以获得不公平的优势.",
 			id = 2377868063,
 			enabled = true,
 			raw = "Strucid",
@@ -386,13 +386,13 @@ local siriusValues = {
 local siriusSettings = {
 	{
 		name = '一般',
-		description = 'Sirius的常规设置，从简单到独特的功能.',
+		description = 'Sirius的常规设置,从简单到独特的功能.',
 		color = Color3.new(0.117647, 0.490196, 0.72549),
 		minimumLicense = 'Free',
 		categorySettings = {
 			{
 				name = '匿名客户',
-				description = '在任何CoreGui Parented接口中实时随机启用您的用户名，包括Sirius. 您仍然将作为您在游戏中的其他人的实际名称. 此设置可以是性能密集型的.',
+				description = '在任何CoreGui Parented接口中实时随机启用您的用户名,包括Sirius. 您仍然将作为您在游戏中的其他人的实际名称.此设置可以是性能密集型的.',
 				settingType = 'Boolean',
 				current = false,
 
@@ -408,7 +408,7 @@ local siriusSettings = {
 			},
 			{
 				name = '隐藏切换按钮',
-				description = '使用Toggle按钮，将删除选项以打开智能栏.',
+				description = '使用Toggle按钮,将删除选项以打开智能栏.',
 				settingType = 'Boolean',
 				current = false,
 
@@ -470,7 +470,7 @@ local siriusSettings = {
 	},
 	{
 		name = '钥匙绑定',
-		description = '将keybinds分配给操作或更改键控，例如打开/关闭sirius.',
+		description = '将keybinds分配给操作或更改键控,例如打开/关闭sirius.',
 		color = Color3.new(0.0941176, 0.686275, 0.509804),
 		minimumLicense = 'Free',
 		categorySettings = {
@@ -610,7 +610,7 @@ local siriusSettings = {
 		categorySettings = {
 			{
 				name = 'FPS限制',
-				description = '当您将标签到Roblox时，Sirius将自动将您的FPS设置为此数字.',
+				description = '当您将标签到Roblox时,Sirius将自动将您的FPS设置为此数字.',
 				settingType = 'Number',
 				values = {20, 5000},
 				current = 240,
@@ -619,7 +619,7 @@ local siriusSettings = {
 			},
 			{
 				name = '在未聚焦的同时限制FPS',
-				description = '当您从Roblox的标签或不组织时，Sirius将自动将您的FPS设置为60.',
+				description = '当您从Roblox的标签或不组织时,Sirius将自动将您的FPS设置为60.',
 				settingType = 'Boolean', -- 下面的帽号码!! min和max val
 				current = true,
 
@@ -627,7 +627,7 @@ local siriusSettings = {
 			},
 			{
 				name = '自适应延迟警告',
-				description = 'SIRIUS将在后台检查您的平均延迟，如果您当前的延迟显着远高于平均延迟，则通知您.',
+				description = 'SIRIUS将在后台检查您的平均延迟,如果您当前的延迟显着远高于平均延迟,则通知您.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -635,7 +635,7 @@ local siriusSettings = {
 			},
 			{
 				name = '自适应性能警告',
-				description = 'SIRIUS将在后台检查您的普通FPS，并在当前的FPS下面低于特定号码时通知您.',
+				description = 'SIRIUS将在后台检查您的普通FPS,并在当前的FPS下面低于特定号码时通知您.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -688,7 +688,7 @@ local siriusSettings = {
 			},
 			{
 				name = '智能剪贴板拦截',
-				description = '在允许它设置剪贴板之前，阻止您的剪贴板并询问您.',
+				description = '在允许它设置剪贴板之前,阻止您的剪贴板并询问您.',
 				settingType = 'Boolean',
 				minimumLicense = 'Essential',
 				current = true,
@@ -699,7 +699,7 @@ local siriusSettings = {
 	},
 	{
 		name = '日志记录',
-		description = '将日志发送到您指定的Webhook URL，如玩家加入和叶和消息.',
+		description = '将日志发送到您指定的Webhook URL,如玩家加入和叶和消息.',
 		color = Color3.new(0.905882, 0.780392, 0.0666667),
 		minimumLicense = 'Free',
 		categorySettings = {
@@ -3287,8 +3287,8 @@ local function openSettings()
 	settingsPanel.Size = UDim2.new(0, 550, 0, 340)
 	settingsPanel.Title.Position = UDim2.new(0.045, 0, 0.057, 0)
 
-	settingsPanel.Title.Text = "设置"
-	settingsPanel.Subtitle.Text = "调整您的首选项，设置新的键控，测试新功能等."
+	settingsPanel.Title.Text = "Settings"
+	settingsPanel.Subtitle.Text = "调整您的首选项,设置新的键控,测试新功能等."
 
 	tweenService:Create(settingsPanel, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 613, 0, 384)}):Play()
 	tweenService:Create(settingsPanel, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
@@ -3433,8 +3433,8 @@ local function assembleSettings()
 			tweenService:Create(settingsPanel.Back, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0.002, 0, 0.052, 0)}):Play()
 			tweenService:Create(settingsPanel.Title, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0.045, 0, 0.057, 0)}):Play()
 			tweenService:Create(settingsPanel.UIGradient, TweenInfo.new(1, Enum.EasingStyle.Exponential), {Offset = Vector2.new(0, 1.3)}):Play()
-			settingsPanel.Title.Text = "设置"
-			settingsPanel.Subtitle.Text = "调整您的首选项，设置新的键控，测试新功能等"
+			settingsPanel.Title.Text = "Settings"
+			settingsPanel.Subtitle.Text = "调整您的首选项,设置新的键控,测试新功能等"
 			settingsPanel.SettingTypes.Visible = true
 			settingsPanel.SettingLists.Visible = false
 		end)
@@ -4524,7 +4524,7 @@ while task.wait(1) do
 		disconnectedPrompt.Visible = true
 
 		if disconnectType == "ban" then
-			disconnectedPrompt.Content.Text = "你已经被禁止了，你想离开这个服务器吗？"
+			disconnectedPrompt.Content.Text = "你已经被禁止了,你想离开这个服务器吗?"
 			disconnectedPrompt.Action.Text = "Leave"
 			disconnectedPrompt.Action.Size = UDim2.new(0, 77, 0, 36) -- use textbounds
 
@@ -4533,7 +4533,7 @@ while task.wait(1) do
 				ColorSequenceKeypoint.new(1, Color3.new(0.819608, 0.164706, 0.164706))
 			})
 		elseif disconnectType == "kick" then
-			disconnectedPrompt.Content.Text = "你被踢了，你想服务器跳转吗？"
+			disconnectedPrompt.Content.Text = "你被踢了,你想服务器跳转吗?"
 			disconnectedPrompt.Action.Text = "Serverhop"
 			disconnectedPrompt.Action.Size = UDim2.new(0, 114, 0, 36)
 
@@ -4542,7 +4542,7 @@ while task.wait(1) do
 				ColorSequenceKeypoint.new(1, Color3.new(0.0862745, 0.596078, 0.835294))
 			})
 		elseif disconnectType == "network" then
-			disconnectedPrompt.Content.Text = "你迷失了连接，你想重新加入吗？"
+			disconnectedPrompt.Content.Text = "你迷失了连接,你想重新加入吗?"
 			disconnectedPrompt.Action.Text = "Rejoin"
 			disconnectedPrompt.Action.Size = UDim2.new(0, 82, 0, 36)
 
